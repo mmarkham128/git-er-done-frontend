@@ -1,1 +1,1 @@
-This is the future Javawockies front end! woot!
+Ez 100%
