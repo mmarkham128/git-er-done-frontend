@@ -33,3 +33,4 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span').textContent).toContain('git-er-done-app app is running!');
   });
 });
+
