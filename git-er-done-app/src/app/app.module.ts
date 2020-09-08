@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
+import { AdminFormComponent } from './admin-form/admin-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    SignupPageComponent
+    SignupPageComponent,
+    AdminFormComponent
   ],
   imports: [
     BrowserModule,
