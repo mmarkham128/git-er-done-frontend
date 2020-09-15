@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 
-
 // imports for each of the route components
 import { LoginPageComponent } from './login-page/login-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
