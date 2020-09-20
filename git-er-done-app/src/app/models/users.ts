@@ -10,7 +10,7 @@ export class Users {
     contactZip: number;
     employeeFirstName: string;
     employeeLastName: string;
-    employeeID: string;
+    employeeID: number;
     employeeWorkNumber: number;
     employeeCellNumber: number;
     email: string;
