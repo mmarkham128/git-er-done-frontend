@@ -1,21 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import {} from 'jasmine';
 
-import { SignupPageComponent } from './signup-page.component';
+import { ViewEmployeeComponent } from './view-employee.component';
 
-describe('SignupPageComponent', () => {
-  let component: SignupPageComponent;
-  let fixture: ComponentFixture<SignupPageComponent>;
+describe('ViewEmployeeComponent', () => {
+  let component: ViewEmployeeComponent;
+  let fixture: ComponentFixture<ViewEmployeeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SignupPageComponent ]
+      declarations: [ ViewEmployeeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SignupPageComponent);
+    fixture = TestBed.createComponent(ViewEmployeeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

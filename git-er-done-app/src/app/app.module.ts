@@ -8,6 +8,17 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { MyJobsComponent } from './employee/my-jobs/my-jobs.component';
+import { CompleteJobComponent } from './employee/complete-job/complete-job.component';
+import { CreateEmployeeComponent } from './signup/create-employee/create-employee.component';
+import { ViewEmployeeComponent } from './signup/view-employee/view-employee.component';
+import { EditEmployeeComponent } from './signup/edit-employee/edit-employee.component';
+import { CreateJobComponent } from './admin/create-job/create-job.component';
+import { EditJobComponent } from './admin/edit-job/edit-job.component';
+import { RestoreJobComponent } from './admin/restore-job/restore-job.component';
+import { ViewAllJobsComponent } from './admin/view-all-jobs/view-all-jobs.component';
+import { ViewCurrentJobsComponent } from './admin/view-current-jobs/view-current-jobs.component';
+import { ViewCompletedJobsComponent } from './admin/view-completed-jobs/view-completed-jobs.component';
 
 
 
@@ -16,8 +27,20 @@ import { LoginPageComponent } from './login-page/login-page.component';
     AppComponent,
     HomePageComponent,
     LoginPageComponent,
+    back-end-integration
     SignupPageComponent,
     AdminFormComponent,
+    MyJobsComponent,
+    CompleteJobComponent,
+    CreateEmployeeComponent,
+    ViewEmployeeComponent,
+    EditEmployeeComponent,
+    CreateJobComponent,
+    EditJobComponent,
+    RestoreJobComponent,
+    ViewAllJobsComponent,
+    ViewCurrentJobsComponent,
+    ViewCompletedJobsComponent
   ],
   imports: [
     BrowserModule,
