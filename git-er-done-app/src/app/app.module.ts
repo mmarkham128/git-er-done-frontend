@@ -4,8 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { SignupPageComponent } from './signup-page/signup-page.component';
-import { AdminFormComponent } from './admin/admin-form/admin-form.component';
+
 
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MyJobsComponent } from './employee/my-jobs/my-jobs.component';
@@ -26,8 +25,6 @@ import { ViewCompletedJobsComponent } from './admin/view-completed-jobs/view-com
     AppComponent,
     HomePageComponent,
     LoginPageComponent,
-    SignupPageComponent,
-    AdminFormComponent,
     MyJobsComponent,
     CompleteJobComponent,
     CreateEmployeeComponent,
