@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../shared/services/users.service';
+import { Router } from '@angular/router';
+import { Users } from '../models/users';
 
 @Component({
   selector: 'app-login-page',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  user: Users = new Users();
+
+  constructor(private userService: UserService,
+    public router: Router
+    ){ }
 
   ngOnInit(): void {
+  }
+
+  getLogin() {
+    this.userService.getLogin(this.user).subscribe((res: any) => {
+      console.log(res);
+      localStorage.setItem('access-token', res.token);
+      this.router.navigate(['users/user-profile']);
+    })
   }
 
 }

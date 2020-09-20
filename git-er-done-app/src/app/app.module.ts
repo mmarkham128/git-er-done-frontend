@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
-
-
+import { SignupPageComponent } from './signup-page/signup-page.component';
+import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MyJobsComponent } from './employee/my-jobs/my-jobs.component';
 import { CompleteJobComponent } from './employee/complete-job/complete-job.component';
@@ -20,11 +21,15 @@ import { ViewCurrentJobsComponent } from './admin/view-current-jobs/view-current
 import { ViewCompletedJobsComponent } from './admin/view-completed-jobs/view-completed-jobs.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     LoginPageComponent,
+    back-end-integration
+    SignupPageComponent,
+    AdminFormComponent,
     MyJobsComponent,
     CompleteJobComponent,
     CreateEmployeeComponent,
@@ -39,7 +44,8 @@ import { ViewCompletedJobsComponent } from './admin/view-completed-jobs/view-com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
