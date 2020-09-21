@@ -1,0 +1,52 @@
+{
+    "createJobs": [
+        {
+            "businessName": "Acme",
+            "contactFirstName": "Wiley",
+            "contactLastName": "Coyote",
+            "contactMainPhoneNumber": "9998887777",
+            "contactAltPhoneNumber": "8887776666",
+            "contactStreet": "123 Main St",
+            "contactCity": "Desert City",
+            "contactState": "AZ",
+            "contactZip": "98765",
+            "employeeFirstName": "Road",
+            "employeeLastName": "Runner",
+            "jobDate": "May 5 1999",
+            "jobNotes": "Client is very gullible."
+        },
+        {
+            "businessName": "Over the Rainbow",
+            "contactFirstName": "Dorothy",
+            "contactLastName": "Gale",
+            "contactMainPhoneNumber": "7776665555",
+            "contactAltPhoneNumber": "6665554444",
+            "contactStreet": "321 Yellow Brick Rd",
+            "contactCity": "Emerald City",
+            "contactState": "KS",
+            "contactZip": "87654",
+            "employeeFirstName": "Glenda",
+            "employeeLastName": "Southwich",
+            "jobDate": "May 5 1999",
+            "jobNotes": "Client friends are Toto, Tin Man, Scarecrow and Cowardly Lion."
+            },
+        {
+            "businessName": "Women of Themyscira",
+            "contactFirstName": "Diana",
+            "contactLastName": "Prince",
+            "contactMainPhoneNumber": "8887776666",
+            "contactAltPhoneNumber": "7776665555",
+            "contactStreet": "300 Magic Rope Ln",
+            "contactCity": "Themyscira",
+            "contactState": "AK",
+            "contactZip": "76543",
+            "employeeFirstName": "Captain",
+            "employeeLastName": "America",
+            "jobDate": "May 5 1999",
+            "jobNotes": "Client nickname is Wonder Woman"
+        }
+    ]
+}
+
+
+												

@@ -5,8 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { SignupPageComponent } from './signup-page/signup-page.component';
-import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MyJobsComponent } from './employee/my-jobs/my-jobs.component';
 import { CompleteJobComponent } from './employee/complete-job/complete-job.component';
@@ -27,9 +25,6 @@ import { ViewCompletedJobsComponent } from './admin/view-completed-jobs/view-com
     AppComponent,
     HomePageComponent,
     LoginPageComponent,
-    back-end-integration
-    SignupPageComponent,
-    AdminFormComponent,
     MyJobsComponent,
     CompleteJobComponent,
     CreateEmployeeComponent,

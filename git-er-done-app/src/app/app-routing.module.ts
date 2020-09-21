@@ -23,6 +23,7 @@ import { ViewCompletedJobsComponent } from './admin/view-completed-jobs/view-com
 
 // create path and components for each of the pages
 const routes: Routes = [
+  { path: '', component: HomePageComponent},
   { path: 'home', component: HomePageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'my-jobs', component: MyJobsComponent },
