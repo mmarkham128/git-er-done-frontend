@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../shared/services/users.service';
 import { Router } from '@angular/router';
 import { Users } from '../models/users';
 
@@ -12,7 +11,7 @@ export class LoginPageComponent implements OnInit {
 
   user: Users = new Users();
 
-  constructor(private userService: UserService,
+  constructor(
     public router: Router
     ){ }
 
@@ -20,11 +19,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   getLogin() {
-    this.userService.getLogin(this.user).subscribe((res: any) => {
-      console.log(res);
-      localStorage.setItem('access-token', res.token);
-      this.router.navigate(['users/user-profile']);
-    })
+    
   }
 
 }
