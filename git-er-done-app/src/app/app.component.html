@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Hello Bulma!</title>
+    <!-- stylesheet for Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <!-- <link href="~bulma-calendar/dist/css/bulma-calendar.min.css" rel="stylesheet"> -->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar is-black is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <!-- when icon clicked, will route back to the home page -->
+        <a class="navbar-item" href="" routerLink="home">
+          <img src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/18lrio6r8bvocjpg.jpg" width="75" height="auto">
+        </a>
+
+        <!-- Responsive Hamburger -->
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+        <!-- Navbar Titles -->
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" routerLink="home">
+            Home
+          </a>
+
+          <a class="navbar-item" routerLink="signup">
+            Signup
+          </a>
+
+          <a class="navbar-item" routerLink="login">
+            Login
+          </a>
+
+        </div>
+      </div>
+    </nav>
+
+  <!-- MISC TEXT INFO -->
+
+  <!-- <p>
+    Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon starboard grog black jack gangway rutters.
+    <br>
+    Deadlights jack lad schooner scallywag dance the hempen jig carouser broadside cable strike colors. Bring a spring upon her cable holystone blow the man down spanker Shiver me timbers to go on account lookout wherry doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm spyglass sheet transom heave to.
+    <br>
+    Trysail Sail ho Corsair red ensign hulk smartly boom jib rum gangway. Case shot Shiver me timbers gangplank crack Jennys tea cup ballast Blimey lee snow crow's nest rutters. Fluke jib scourge of the seven seas boatswain schooner gaff booty Jack Tar transom spirits.
+  </p> -->
+
+<!-- FOOTER -->
+<!-- <footer class="footer is-black">
+  <div class="content has-text-centered">
+    <p>
+      <strong>THIS IS OUR FOOTER</strong>
+    </p>
+  </div>
+</footer> -->
+
+<router-outlet></router-outlet>
+
+<script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script>
+
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </body>
+</html>
+
+
+
+
