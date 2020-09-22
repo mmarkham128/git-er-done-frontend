@@ -1,20 +1,10 @@
 export class Users {
-    businessName: string;
-    contactFirstName: string;
-    contactLastName: string;
-    contactMainPhoneNumber: number;
-    contactAltPhoneNumber: number;
-    contactStreet: string;
-    contactCity: string;
-    contactState: string;
-    contactZip: number;
     employeeFirstName: string;
     employeeLastName: string;
-    employeeID: number;
-    employeeWorkNumber: number;
     employeeCellNumber: number;
-    email: string;
     username: string;
     password: string;
     admin: boolean;
+    // employeeID: number;
+    // email: string;
 };
