@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { from, Subscription } from 'rxjs';
+import { Post } from '../../models/posts';
+import { PostsService } from '../../services/posts.service' 
 
 @Component({
   selector: 'app-view-all-jobs',
@@ -6,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-all-jobs.component.css']
 })
 export class ViewAllJobsComponent implements OnInit {
+posts: Post []= []
+private postsSub: Subscription;
 
-  constructor() { }
+  constructor(public postsService: PostsService) { }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(){
+    this.postsService.getPosts()
+   this.postsSub = this.postsService.getPostUpdateListener()
+    .subscribe((posts: Post[]) => {
+        this.posts = posts;
+    });
+}
+ngOnDestroy(){
+    this.postsSub.unsubscribe();
+}
 }
