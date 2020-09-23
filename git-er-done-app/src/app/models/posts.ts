@@ -10,8 +10,10 @@ export class Posts {
     employeeFirstName: string;
     employeeLastName: string;
     jobNotes: string;
-    // admin: boolean;
-    timeStampAssigned: string;
-    timeStampCompleted: string;
-    employeeID: string;
+    employeeID: number;
+    jobCompleted: boolean;
+    jobDeleted: boolean;
+    // primary key: ;
 };
+
+
