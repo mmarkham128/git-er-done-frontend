@@ -1,5 +1,5 @@
 export class Post {
-    businessName: string;
+    businessName: string
     contactFirstName: string;
     contactLastName: string;
     contactMainPhoneNumber: string;
@@ -13,7 +13,6 @@ export class Post {
     employeeID: number;
     jobCompleted: boolean;
     jobDeleted: boolean;
-    // primary key: ;
 };
 
 
