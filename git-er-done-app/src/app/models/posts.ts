@@ -1,5 +1,6 @@
 export class Post {
-    businessName: string
+    id: string;
+    businessName: string;
     contactFirstName: string;
     contactLastName: string;
     contactMainPhoneNumber: string;
