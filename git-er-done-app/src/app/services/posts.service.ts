@@ -25,4 +25,31 @@ export class PostsService {
     getPostUpdateListener() {
       return this.postsUpdated.asObservable();
   }
+
+  addPost(
+    businessName: string,
+    contactFirstName: string,
+    contactLastName: string,
+    contactMainPhoneNumber: string,
+    contactStreet: string,
+    contactCity: string,
+    contactState: string,
+    contactZip: string,
+    employeeFirstName: string,
+    employeeLastName: string,
+    jobNotes: string,
+    employeeID: number,
+    jobCompleted: boolean,
+    jobDeleted: boolean){
+    const post: Post = {id: null, businessName:businessName, contactFirstName:contactFirstName,contactLastName:contactLastName, contactMainPhoneNumber:contactMainPhoneNumber, contactStreet:contactStreet, contactCity:contactCity, contactState:contactState, contactZip:contactZip, employeeFirstName:employeeFirstName, employeeLastName:employeeLastName, jobNotes:jobNotes, employeeID:employeeID, jobCompleted:jobCompleted,jobDeleted:jobDeleted  };
+    this.http.post<{message: string}>("http://localhost:3000/api/posts", post)
+    .subscribe(responseData => {
+        console.log(responseData)
+    })
+    this.posts.push(post)
+    this.postsUpdated.next([...this.posts]);
 }
+}
+
+
+

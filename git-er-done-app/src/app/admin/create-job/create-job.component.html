@@ -4,28 +4,28 @@
       <div class="columns is-centered">
         <div column is-5-tablet is-4-desktop is-3-widescreen>
   
-      <form action="POST" class="box">
+      <form action="POST" class="box" (submit)="onAddPost(postForm)" #postForm="ngForm">
       <h3 class="title is-3 has-text-centered">Job Form</h3>
       <label class="label">Business Name</label>
-      <input class="input is-rounded is-small is-black column is-12" type="text" name = "businessName" placeholder="Customer Business Name">
+      <input class="input is-rounded is-small is-black column is-12" type="text" name = "businessName" placeholder="Customer Business Name" ngModel required #businessName="ngModel">
       <br>
       <label class="label ">Contact Name</label>
       <div class="contactName level">
-      <input class="input is-rounded is-small is-black column is-5" name="firstName" type="text" placeholder="First Name">
-      <input class="input is-rounded is-small is-black column is-5" name="lastName" type="text" placeholder="Last Name">
+      <input class="input is-rounded is-small is-black column is-5" name="contactFirstName" type="text" placeholder="First Name" ngModel required #contactFirstName="ngModel">
+      <input class="input is-rounded is-small is-black column is-5" name="contactLastName" type="text" placeholder="Last Name" ngModel required #contactLastName="ngModel">
     </div>
    
     <label class="label ">Business Information</label>
-      <input class="input is-rounded is-small is-black column is-12" name="contactStreet" type="text" placeholder="Street Address">
+      <input class="input is-rounded is-small is-black column is-12" name="contactStreet" type="text" placeholder="Street Address" ngModel required #contactStreet="ngModel">
       <br>
       <div class="address level">
-      <input class="input is-rounded is-small is-black column is-5" name="contactCity" type="text" placeholder="City">
+      <input class="input is-rounded is-small is-black column is-5" name="contactCity" type="text" placeholder="City" ngModel required #contactCity="ngModel">
       <br>
-      <input class="input is-rounded is-small is-black column is-2" name="contactState" type="text" placeholder="State">
+      <input class="input is-rounded is-small is-black column is-2" name="contactState" type="text" placeholder="State" ngModel required #contactState="ngModel">
       <br>
-      <input class="input is-rounded is-small is-black column is-3" name="contactZip" type="text" placeholder="Zip">
+      <input class="input is-rounded is-small is-black column is-3" name="contactZip" type="text" placeholder="Zip" ngModel required #contactZip="ngModel">
     </div>
-      <input class="input is-rounded is-small is-black column is-5" name="contactMainPhoneNumber" type="tel" placeholder="Phone Number">
+      <input class="input is-rounded is-small is-black column is-5" name="contactMainPhoneNumber" type="tel" placeholder="Phone Number" ngModel required #contactMainPhoneNumber="ngModel">
       <div class="field">
         <label class="label">Employees</label>
         <p class="control">
@@ -46,7 +46,7 @@
       <div class="textArea is-rounded">
         <div class="columns">
           <div class="column is-12">
-              <textarea class="textarea is-black" name="jobNotes" placeholder="Job Notes" rows="3"></textarea>
+              <textarea class="textarea is-black" name="jobNotes" placeholder="Job Notes" rows="3" ngModel required #jobNotes="ngModel"></textarea>
           </div>
         </div>
       </div>
