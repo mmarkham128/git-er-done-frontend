@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { from, Subscription } from 'rxjs';
 import { Post } from '../../models/posts';
-import { PostsService } from '../../services/posts.service' 
+import { PostsService } from '../../services/posts.service'
 
 @Component({
   selector: 'app-view-all-jobs',
@@ -16,7 +16,7 @@ private postsSub: Subscription;
 
   ngOnInit(){
     this.postsService.getPosts()
-   this.postsSub = this.postsService.getPostUpdateListener()
+  this.postsSub = this.postsService.getPostUpdateListener()
     .subscribe((posts: Post[]) => {
         this.posts = posts;
     });

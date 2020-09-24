@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Users } from '../models/users';
+import { Subscription } from 'rxjs'
+import { User } from '../models/users';
+import { UsersService} from '../services/users.service'
 
 @Component({
   selector: 'app-login-page',
@@ -9,17 +10,20 @@ import { Users } from '../models/users';
 })
 export class LoginPageComponent implements OnInit {
 
-  user: Users = new Users();
+  users: User[]= []
+  private usersSub: Subscription;
 
-  constructor(
-    public router: Router
-    ){ }
+  constructor(public usersService : UsersService){ }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.usersService.getUsers()
+    this.usersSub = this.usersService.getUserUpdateListener()
+    .subscribe((users: User[]) => {
+      this.users = users
+    });
   }
-
-  getLogin() {
-    
+  ngOnDestroy(){
+    this.usersSub.unsubscribe();
   }
 
 }

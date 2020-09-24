@@ -1,10 +1,10 @@
-export class Users {
-    employeeFirstName: string;
-    employeeLastName: string;
-    employeeCellNumber: number;
-    username: string;
+export class User {
+    // employeeFirstName: string;
+    // employeeLastName: string;
+    // employeeCellNumber: number;
+    // username: string;
     password: string;
-    admin: boolean;
+    // admin: boolean;
     // employeeID: number;
-    // email: string;
+    email: string;
 };
