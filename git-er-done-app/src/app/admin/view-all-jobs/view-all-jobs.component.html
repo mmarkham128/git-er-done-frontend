@@ -3,12 +3,12 @@
 
 
   
-  <div *ngFor="let post of posts">
+  
 
-<div class="columns is-multiline is-centered is-mobile">
-  <div class="card column is-one-third">
+<div class="columns is-multiline my-6 mx-6">
+  <div *ngFor="let post of posts" class="column is-one-third">
       <header class="card-header">
-        <p class="card-header-title is-bold is-primary">
+        <p class="card-header-title is-bold has-background-info-dark has-text-white">
           Business Name: 
           <br>{{post.businessName}}
         </p>
@@ -21,17 +21,18 @@
           Address: {{post.contactStreet}} <br>
           {{post.contactCity}} {{post.contactState}}  {{post.contactZip}} <br>
           Assigned To: {{post.employeeFirstName}} {{post.employeeLastName}} <br>
-          Job Notes: {{post.jobNotes}}
+          Job Notes: 
+          <textarea class="textarea" placeholder="jobNotes">{{post.jobNotes}}</textarea>
         </div>
       </div>
       <footer class="card-footer">
-        <a href="#" class="card-footer-item">Save</a>
-        <a href="#" class="card-footer-item">Edit</a>
-        <a href="#" class="card-footer-item">Delete</a>
+        <a href="#" class="card-footer-item has-background-info-light">Edit</a>
+        <a href="#" class="card-footer-item has-background-success-light">Delete</a>
+        <!-- <a href="#" class="card-footer-item">Delete</a> -->
       </footer>
       </div>
       </div>
-    </div>
+
       
 
 
