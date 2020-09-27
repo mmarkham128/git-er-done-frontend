@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs'
-import { User } from '../models/users';
 import { UsersService} from '../services/users.service'
+import {  Router, ActivatedRoute } from '@angular/router'
+import { first } from 'rxjs/operators'
+
+
+
 
 @Component({
   selector: 'app-login-page',
@@ -10,20 +13,40 @@ import { UsersService} from '../services/users.service'
 })
 export class LoginPageComponent implements OnInit {
 
-  users: User[]= []
-  private usersSub: Subscription;
+  loading = false;
+  submitted = false;
+  email: string;
+  password: string;
 
-  constructor(public usersService : UsersService){ }
+  constructor(
+    private route : ActivatedRoute,
+    private router: Router,
+    private usersService: UsersService
+
+  ){ }
+
 
   ngOnInit(){
-    this.usersService.getUsers()
-    this.usersSub = this.usersService.getUserUpdateListener()
-    .subscribe((users: User[]) => {
-      this.users = users
-    });
+
   }
-  ngOnDestroy(){
-    this.usersSub.unsubscribe();
-  }
+
+
+  onSubmit() {
+    this.submitted = true;
+
+    this.loading = true;
+    this.usersService.login(this.email, this.password)
+        .pipe(first())
+        .subscribe({
+            next: () => {
+                // get return url from query parameters or default to home page
+                const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+                this.router.navigateByUrl(returnUrl);
+            },
+            error: error => {
+                this.loading = false;
+            }
+        });
+}
 
 }
