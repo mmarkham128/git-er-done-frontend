@@ -1,29 +1,41 @@
 import { Injectable } from '@angular/core';
-import { User } from '../models/users'
-import { Subject } from 'rxjs'
+import { Router } from '@angular/router';
+import { BehaviorSubject, Observable } from 'rxjs'
 import { HttpClient } from '@angular/common/http'
+import { map } from 'rxjs/operators'
+
+import { User } from '../models/users'
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  myUsersURL: string = "http://localhost:3000/api/users"
-  private users: User[]= [];
-  private usersUpdated = new Subject<User[]>();
+  url: string = "https://localhost/3000/users/login"
 
-  constructor(private http: HttpClient) { }
+  private userSubject: BehaviorSubject<User>;
+  public user: Observable<User>;
 
+  constructor(
+    private http: HttpClient,
+    private router: Router
+    ) {
+      this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));
+      this.user = this.userSubject.asObservable();
+    }
 
-getUsers() {
-  this.http.get<{message: string, users: User[] }> ("http://localhost:3000/api/users")
-  .subscribe((userData) => {
-    this.users = userData.users
-    this.usersUpdated.next([...this.users])
-  });
-}
+    public get userValue(): User {
+      return this.userSubject.value;
+    }
 
-getUserUpdateListener(){
-  return this.usersUpdated.asObservable();
-}
+    login(email, password) {
+      return this.http.post<User>(`${this.url}`, { email, password })
+          .pipe(map(user => {
+              // store user details and jwt token in local storage to keep user logged in between page refreshes
+              localStorage.setItem('user', JSON.stringify(user));
+              this.userSubject.next(user);
+              return user;
+          }));
+  }
 }

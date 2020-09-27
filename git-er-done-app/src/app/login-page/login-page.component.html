@@ -3,7 +3,7 @@
     <div class="container">
       <div class="columns is-centered">
         <div column is-5-tablet is-4-desktop is-3-widescreen>
-          <form action="POST" class="box">
+          <form action="POST" class="box" (ngSubmit)="onSubmit()">
             <h3 class="title is-3 has-text-centered">Login</h3>
             <div class="field">
               <label for="" class="label">Email</label>
@@ -24,7 +24,7 @@
               </div>
             </div>
             <div class="field level">
-              <button class="button is-info" type="submit">Login</button>
+              <button class="button is-info" type="submit" >Login</button>
               <button class="button is-info">Cancel</button>
             </div>
           </form>
