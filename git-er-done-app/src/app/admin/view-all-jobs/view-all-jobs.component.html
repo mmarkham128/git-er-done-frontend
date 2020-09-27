@@ -2,35 +2,55 @@
 <!-- <div class="card"> -->
 
 
-  
+  <section class="hero has-background-info-dark">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title has-text-centered has-text-white is-size-1">
+          All Jobs
+        </h1>
+        <br>
+        <div class="headerButtons level">
+        <input class="button is-medium is-info is-inverted" type="submit" value="Create Job">
+        <input class="button is-medium is-info is-inverted" type="submit" value="View All Jobs">
+        <input class="button is-medium is-info is-inverted" type="submit" value="View Completed Jobs">
+        <input class="button is-medium is-info is-inverted" type="submit" value="View Current Jobs">
+        <input class="button is-medium is-info is-inverted" type="submit" value="View Employees">
+      </div>
+      </div>
+    </div>
+  </section>
   
 
 <div class="columns is-multiline my-6 mx-6">
   <div *ngFor="let post of posts" class="column is-one-third">
+    <div class="card">
       <header class="card-header">
-        <p class="card-header-title is-bold has-background-info-dark has-text-white">
+        <p class="card-header-title is-bold has-background-info has-text-white">
           Business Name: 
-          <br>{{post.businessName}}
+          <br>
+          {{post.businessName}}
         </p>
       </header>
       <div class="card-content">
         <div class="content">
-          Contact Name: {{post.contactFirstName}} {{post.contactLastName}}
+          <p>
+          <strong>Contact Name: </strong> {{post.contactFirstName}} {{post.contactLastName}}
           <br>
-          Phone Number: {{post.contactMainPhoneNumber}} <br>
-          Address: {{post.contactStreet}} <br>
-          {{post.contactCity}} {{post.contactState}}  {{post.contactZip}} <br>
-          Assigned To: {{post.employeeFirstName}} {{post.employeeLastName}} <br>
-          Job Notes: 
+          <strong>Phone Number: </strong>{{post.contactMainPhoneNumber}} <br>
+          <strong>Address: </strong>{{post.contactStreet}} <br>
+          {{post.contactCity}}, {{post.contactState}}  {{post.contactZip}} <br>
+          <strong>Assigned To: </strong>{{post.employeeFirstName}} {{post.employeeLastName}} <br>
+          <strong>Job Notes: </strong>
+        </p>
           <textarea class="textarea" placeholder="jobNotes">{{post.jobNotes}}</textarea>
         </div>
       </div>
-      <footer class="card-footer">
-        <a href="#" class="card-footer-item has-background-info-light">Edit</a>
-        <a href="#" class="card-footer-item has-background-success-light">Delete</a>
-        <!-- <a href="#" class="card-footer-item">Delete</a> -->
+      <footer class="card-footer level">
+        <input class="button is-medium is-success" type="submit" value=" Edit ">
+        <input class="button is-medium is-danger" type="submit" value="Delete">
       </footer>
       </div>
+    </div>
       </div>
 
       
