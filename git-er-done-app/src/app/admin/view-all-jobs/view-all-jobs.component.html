@@ -1,7 +1,7 @@
 <!-- post is how to access the info from the array and posts is saying to move through the array of posts.  The array of posts is coming from the DB-->
 <!-- <div class="card"> -->
 
-
+<!-- ADMIN HEADING -->
   <section class="hero has-background-info-dark">
     <div class="hero-body">
       <div class="container">
@@ -10,18 +10,24 @@
         </h1>
         <br>
         <div class="headerButtons level">
-        <input class="button is-medium is-info is-inverted" type="submit" value="Create Job">
-        <input class="button is-medium is-info is-inverted" type="submit" value="View All Jobs">
-        <input class="button is-medium is-info is-inverted" type="submit" value="View Completed Jobs">
-        <input class="button is-medium is-info is-inverted" type="submit" value="View Current Jobs">
-        <input class="button is-medium is-info is-inverted" type="submit" value="View Employees">
+        <input class="adminHome button is-medium is-info is-inverted" type="submit" name="adminHome" value="Admin Home">
+        <input class="createJob button is-medium is-info is-inverted" type="submit" name="createJob" value="Create Job">
+        <input class="allJobs button is-medium is-info is-inverted" type="submit" name="allJobs" value="View All Jobs">
+        <input class="completedJobs button is-medium is-info is-inverted" type="submit" name="completedJobs" value="View Completed Jobs">
+        <input class="currentJobs button is-medium is-info is-inverted" type="submit" name="currentJobs" value="View Current Jobs">
+        <input class="allEmployees button is-medium is-info is-inverted" type="submit" name="allEmployees" value="View Employees">
       </div>
       </div>
     </div>
   </section>
   
+  <!-- BACKGROUND COLOR -->
+  <section class="hero has-background-primary">
+    <div class="hero-body">
 
+  <!-- JOB CARD -->
 <div class="columns is-multiline my-6 mx-6">
+  <!-- LOOP FOR THE JOB CARDS -->
   <div *ngFor="let post of posts" class="column is-one-third">
     <div class="card">
       <header class="card-header">
@@ -53,55 +59,5 @@
     </div>
       </div>
 
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- post card heading -->
-  
-    <!-- <header class="card-header is-6">
-      <p class="businessName card-header-title">
-        {{post.businessName}}
-      </p>
-      </header> -->
-  
-  <!-- {{post.businessName}} -->
-  <!-- post card body -->
-  <!-- {{post.contactFirstName}}
-  {{post.contactLastName}}
-  {{post.contactMainPhoneNumber}}
-  {{post.contactStreet}}
-  {{post.contactCity}}
-  {{post.contactState}}
-  {{post.contactZip}}
-  {{post.employeeFirstName}}
-  {{post.employeeLastName}}
-  {{post.jobNotes}}
-  {{post.employeeID}} -->
-  <!-- post card footer -->
-  <!-- {{post.jobCompleted}}
-  {{post.jobDeleted}}
-    </div>
-</div> -->
-
-<!-- <div class="tile is-ancestor">
-  <div class="tile is-parent">
-    <article class="tile is-child box"> -->
-
-      <!-- <div *ngFor="let post of posts"> -->
-
+      </div>
+      </section>
