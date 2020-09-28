@@ -12,7 +12,7 @@ import { User } from '../models/users'
 })
 export class UsersService {
 
-  url: string = "https://localhost:3000/users/login"
+  // url: string = "http://localhost:3000/users/login"
 
   private userSubject: BehaviorSubject<User>;
   public user: Observable<User>;
@@ -29,13 +29,12 @@ export class UsersService {
       return this.userSubject.value;
     }
 
-    login(email, password) {
-      return this.http.post<User>(`${this.url}`, { email, password })
+    login(formValues) { console.log("Git Gud Kid", formValues)
+      return this.http.post<User>("http://localhost:3000/users/login", { formValues})
           .pipe(map(user => {
-              // store user details and jwt token in local storage to keep user logged in between page refreshes
-              localStorage.setItem('user', JSON.stringify(user));
               this.userSubject.next(user);
               return user;
+
           }));
   }
 }
