@@ -19,6 +19,7 @@ import { ViewAllJobsComponent } from './admin/view-all-jobs/view-all-jobs.compon
 import { ViewCurrentJobsComponent } from './admin/view-current-jobs/view-current-jobs.component';
 import { ViewCompletedJobsComponent } from './admin/view-completed-jobs/view-completed-jobs.component';
 import { LogoutComponent } from './logout/logout.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 
 
 
@@ -38,7 +39,8 @@ import { LogoutComponent } from './logout/logout.component';
     ViewAllJobsComponent,
     ViewCurrentJobsComponent,
     ViewCompletedJobsComponent,
-    LogoutComponent
+    LogoutComponent,
+    AdminHomeComponent
   ],
   imports: [
     BrowserModule,
