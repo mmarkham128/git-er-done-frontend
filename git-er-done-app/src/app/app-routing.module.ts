@@ -20,6 +20,7 @@ import { ViewAllJobsComponent } from './admin/view-all-jobs/view-all-jobs.compon
 import { ViewCurrentJobsComponent } from './admin/view-current-jobs/view-current-jobs.component';
 import { ViewCompletedJobsComponent } from './admin/view-completed-jobs/view-completed-jobs.component';
 import { LogoutComponent } from './logout/logout.component';
+import { AdminHomeComponent} from './admin/admin-home/admin-home.component';
 
 
 
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'current-jobs', component: ViewCurrentJobsComponent },
   { path: 'completed-jobs', component: ViewCompletedJobsComponent },
   { path: 'logout', component: LogoutComponent},
+  { path: 'admin-home', component: AdminHomeComponent},
 ];
 
 @NgModule({
