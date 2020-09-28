@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService} from '../services/users.service'
 import {  Router, ActivatedRoute } from '@angular/router'
 import { first } from 'rxjs/operators'
-
+import { NgForm } from '@angular/forms';
 
 
 
@@ -31,16 +31,16 @@ export class LoginPageComponent implements OnInit {
   }
 
 
-  onSubmit() {
+  onSubmit(f: NgForm) {
+    let formValues = f.form.value
     this.submitted = true;
-
     this.loading = true;
-    this.usersService.login(this.email, this.password)
+    this.usersService.login(formValues)
         .pipe(first())
         .subscribe({
             next: () => {
                 // get return url from query parameters or default to home page
-                const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+                const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/my-jobs';
                 this.router.navigateByUrl(returnUrl);
             },
             error: error => {
