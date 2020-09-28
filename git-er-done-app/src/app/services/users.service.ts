@@ -29,6 +29,30 @@ export class UsersService {
       return this.userSubject.value;
     }
 
+
+addUser(
+  employeeFirstName: string,
+    employeeLastName: string,
+    employeeCellNumber: number,
+    username: string,
+    password: string,
+     admin: boolean,
+    employeeID: number,
+    id:string ){
+  const user: User = {id: null, employeeFirstName:employeeFirstName, employeeLastName:employeeLastName,employeeCellNumber:employeeCellNumber, username:username, password:password, admin:admin, employeeID:employeeID, };
+
+  this.http.post<{message: string}>("http://localhost:3000/api/users", user)
+  .subscribe(responseData => {
+      console.log(responseData)
+  })
+  this.users.push(user)
+  this.usersUpdated.next([...this.users]);
+}
+
+getUserUpdateListener(){
+  return this.usersUpdated.asObservable();
+}
+
     login(email, password) {
       return this.http.post<User>(`${this.url}`, { email, password })
           .pipe(map(user => {
@@ -38,4 +62,7 @@ export class UsersService {
               return user;
           }));
   }
+
 }
+
+
