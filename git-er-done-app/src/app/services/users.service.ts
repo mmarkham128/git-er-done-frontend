@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, Subject } from 'rxjs'
 import { HttpClient } from '@angular/common/http'
 import { map } from 'rxjs/operators'
+import {Subject} from 'rxjs'
 
 import { User } from '../models/users'
 
@@ -18,6 +19,7 @@ export class UsersService {
   public user: Observable<User>;
   private users: User[]= [];
   private usersUpdated = new Subject<User[]>();
+
   constructor(
     private http: HttpClient,
     private router: Router
