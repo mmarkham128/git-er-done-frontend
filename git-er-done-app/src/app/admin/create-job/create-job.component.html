@@ -1,4 +1,24 @@
-<section class="hero has-background-primary is-bold is-fullheight-with-navbar">
+<!-- ADMIN HEADING -->
+<section class="hero has-background-info-dark">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title has-text-centered has-text-white is-size-1">
+        Create A Job
+      </h1>
+      <br>
+      <div class="headerButtons level">
+      <input class="adminHome button is-medium is-info is-inverted" type="submit" name="adminHome" value="Admin Home">
+      <input class="createJob button is-medium is-info is-inverted" type="submit" name="createJob" value="Create Job">
+      <input class="allJobs button is-medium is-info is-inverted" type="submit" name="allJobs" value="View All Jobs">
+      <input class="completedJobs button is-medium is-info is-inverted" type="submit" name="completedJobs" value="View Completed Jobs">
+      <input class="currentJobs button is-medium is-info is-inverted" type="submit" name="currentJobs" value="View Current Jobs">
+      <input class="allEmployees button is-medium is-info is-inverted" type="submit" name="allEmployees" value="View Employees">
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero has-background-primary py-3">
     <div class="hero-body">
     <div class="container">
       <div class="columns is-centered">
@@ -21,7 +41,67 @@
       <div class="address level">
       <input class="input is-rounded is-small is-black column is-5" name="contactCity" type="text" placeholder="City" ngModel required #contactCity="ngModel">
       <br>
-      <input class="input is-rounded is-small is-black column is-2" name="contactState" type="text" placeholder="State" ngModel required #contactState="ngModel">
+      <!-- <input class="input is-rounded is-small is-black column is-2" name="contactState" type="text" placeholder="State" ngModel required #contactState="ngModel"> -->
+      <div class="field">
+        <div class="control">
+          <div class="select is-black is-rounded is-small" name="contactState" >
+            <select>
+              <option>State</option>
+              <option>AL</option>
+              <option>AK</option>
+              <option>AR</option>
+              <option>AZ</option>
+              <option>CA</option>
+              <option>CO</option>
+              <option>CT</option>
+              <option>DC</option>
+              <option>DE</option>
+              <option>FL</option>
+              <option>GA</option>
+              <option>HI</option>
+              <option>IA</option>
+              <option>ID</option>
+              <option>IL</option>
+              <option>IN</option>
+              <option>KS</option>
+              <option>KY</option>
+              <option>LA</option>
+              <option>MA</option>
+              <option>MD</option>
+              <option>ME</option>
+              <option>MI</option>
+              <option>MN</option>
+              <option>MO</option>
+              <option>MS</option>
+              <option>MT</option>
+              <option>NC</option>
+              <option>ND</option>
+              <option>NE</option>
+              <option>NH</option>
+              <option>NJ</option>
+              <option>NM</option>
+              <option>NV</option>
+              <option>NY</option>
+              <option>OH</option>
+              <option>OK</option>
+              <option>OR</option>
+              <option>PA</option>
+              <option>RI</option>
+              <option>SC</option>
+              <option>SD</option>
+              <option>TN</option>
+              <option>TX</option>
+              <option>UT</option>
+              <option>VA</option>
+              <option>VT</option>
+              <option>WA</option>
+              <option>WI</option>
+              <option>WV</option>
+              <option>WY</option>
+            </select>
+          </div>
+        </div>
+      </div>
       <br>
       <input class="input is-rounded is-small is-black column is-3" name="contactZip" type="text" placeholder="Zip" ngModel required #contactZip="ngModel">
     </div>
@@ -50,16 +130,8 @@
           </div>
         </div>
       </div>
-  
-       <!-- <div class="date level">
-    <label class="pickDate">Select a Date</label>
-      <div class="md-outline input-with-post-icon datepicker">
-        <input placeholder="Select date" type="date" id="example" class="form-control">
-        <label for="example"></label>
-      </div>
-    </div> -->
-  
-      <div class="field">
+        <br>
+      <div class="field level">
         <button class="button is-link">Submit</button>
       </div>
   

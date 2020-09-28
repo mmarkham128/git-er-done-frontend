@@ -1,86 +1,63 @@
 <!-- post is how to access the info from the array and posts is saying to move through the array of posts.  The array of posts is coming from the DB-->
 <!-- <div class="card"> -->
 
-
+<!-- ADMIN HEADING -->
+  <section class="hero has-background-info-dark">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title has-text-centered has-text-white is-size-1">
+          All Jobs
+        </h1>
+        <br>
+        <div class="headerButtons level">
+        <input class="adminHome button is-medium is-info is-inverted" type="submit" name="adminHome" value="Admin Home">
+        <input class="createJob button is-medium is-info is-inverted" type="submit" name="createJob" value="Create Job">
+        <input class="allJobs button is-medium is-info is-inverted" type="submit" name="allJobs" value="View All Jobs">
+        <input class="completedJobs button is-medium is-info is-inverted" type="submit" name="completedJobs" value="View Completed Jobs">
+        <input class="currentJobs button is-medium is-info is-inverted" type="submit" name="currentJobs" value="View Current Jobs">
+        <input class="allEmployees button is-medium is-info is-inverted" type="submit" name="allEmployees" value="View Employees">
+      </div>
+      </div>
+    </div>
+  </section>
   
-  <div *ngFor="let post of posts">
+  <!-- BACKGROUND COLOR -->
+  <section class="hero has-background-primary">
+    <div class="hero-body">
 
-<div class="columns is-multiline is-centered is-mobile">
-  <div class="card column is-one-third">
+  <!-- JOB CARD -->
+<div class="columns is-multiline my-6 mx-6">
+  <!-- LOOP FOR THE JOB CARDS -->
+  <div *ngFor="let post of posts" class="column is-one-third">
+    <div class="card">
       <header class="card-header">
-        <p class="card-header-title is-bold is-primary">
+        <p class="card-header-title is-bold has-background-info has-text-white">
           Business Name: 
-          <br>{{post.businessName}}
+          <br>
+          {{post.businessName}}
         </p>
       </header>
       <div class="card-content">
         <div class="content">
-          Contact Name: {{post.contactFirstName}} {{post.contactLastName}}
+          <p>
+          <strong>Contact Name: </strong> {{post.contactFirstName}} {{post.contactLastName}}
           <br>
-          Phone Number: {{post.contactMainPhoneNumber}} <br>
-          Address: {{post.contactStreet}} <br>
-          {{post.contactCity}} {{post.contactState}}  {{post.contactZip}} <br>
-          Assigned To: {{post.employeeFirstName}} {{post.employeeLastName}} <br>
-          Job Notes: {{post.jobNotes}}
+          <strong>Phone Number: </strong>{{post.contactMainPhoneNumber}} <br>
+          <strong>Address: </strong>{{post.contactStreet}} <br>
+          {{post.contactCity}}, {{post.contactState}}  {{post.contactZip}} <br>
+          <strong>Assigned To: </strong>{{post.employeeFirstName}} {{post.employeeLastName}} <br>
+          <strong>Job Notes: </strong>
+        </p>
+          <textarea class="textarea" placeholder="jobNotes">{{post.jobNotes}}</textarea>
         </div>
       </div>
-      <footer class="card-footer">
-        <a href="#" class="card-footer-item">Save</a>
-        <a href="#" class="card-footer-item">Edit</a>
-        <a href="#" class="card-footer-item">Delete</a>
+      <footer class="card-footer level">
+        <input class="button is-medium is-success" type="submit" value=" Edit ">
+        <input class="button is-medium is-danger" type="submit" value="Delete">
       </footer>
       </div>
+    </div>
       </div>
-    </div>
-      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- post card heading -->
-  
-    <!-- <header class="card-header is-6">
-      <p class="businessName card-header-title">
-        {{post.businessName}}
-      </p>
-      </header> -->
-  
-  <!-- {{post.businessName}} -->
-  <!-- post card body -->
-  <!-- {{post.contactFirstName}}
-  {{post.contactLastName}}
-  {{post.contactMainPhoneNumber}}
-  {{post.contactStreet}}
-  {{post.contactCity}}
-  {{post.contactState}}
-  {{post.contactZip}}
-  {{post.employeeFirstName}}
-  {{post.employeeLastName}}
-  {{post.jobNotes}}
-  {{post.employeeID}} -->
-  <!-- post card footer -->
-  <!-- {{post.jobCompleted}}
-  {{post.jobDeleted}}
-    </div>
-</div> -->
-
-<!-- <div class="tile is-ancestor">
-  <div class="tile is-parent">
-    <article class="tile is-child box"> -->
-
-      <!-- <div *ngFor="let post of posts"> -->
-
+      </div>
+      </section>
