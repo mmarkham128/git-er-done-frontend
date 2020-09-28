@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
+
 import { MyJobsComponent } from './employee/my-jobs/my-jobs.component';
 import { CompleteJobComponent } from './employee/complete-job/complete-job.component';
 import { CreateEmployeeComponent } from './signup/create-employee/create-employee.component';
@@ -18,6 +19,8 @@ import { RestoreJobComponent } from './admin/restore-job/restore-job.component';
 import { ViewAllJobsComponent } from './admin/view-all-jobs/view-all-jobs.component';
 import { ViewCurrentJobsComponent } from './admin/view-current-jobs/view-current-jobs.component';
 import { ViewCompletedJobsComponent } from './admin/view-completed-jobs/view-completed-jobs.component';
+import { LogoutComponent } from './logout/logout.component';
+import { AdminHomeComponent} from './admin/admin-home/admin-home.component';
 
 
 
@@ -37,6 +40,8 @@ const routes: Routes = [
   { path: 'all-jobs', component: ViewAllJobsComponent } ,
   { path: 'current-jobs', component: ViewCurrentJobsComponent },
   { path: 'completed-jobs', component: ViewCompletedJobsComponent },
+  { path: 'logout', component: LogoutComponent},
+  { path: 'admin-home', component: AdminHomeComponent},
 ];
 
 @NgModule({
