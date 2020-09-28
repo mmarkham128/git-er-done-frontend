@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs'
+import { BehaviorSubject, Observable, Subject } from 'rxjs'
 import { HttpClient } from '@angular/common/http'
 import { map } from 'rxjs/operators'
 
@@ -16,7 +16,8 @@ export class UsersService {
 
   private userSubject: BehaviorSubject<User>;
   public user: Observable<User>;
-
+  private users: User[]= [];
+  private usersUpdated = new Subject<User[]>();
   constructor(
     private http: HttpClient,
     private router: Router
