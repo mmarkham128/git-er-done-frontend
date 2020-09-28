@@ -18,6 +18,7 @@ import { RestoreJobComponent } from './admin/restore-job/restore-job.component';
 import { ViewAllJobsComponent } from './admin/view-all-jobs/view-all-jobs.component';
 import { ViewCurrentJobsComponent } from './admin/view-current-jobs/view-current-jobs.component';
 import { ViewCompletedJobsComponent } from './admin/view-completed-jobs/view-completed-jobs.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
@@ -36,7 +37,8 @@ import { ViewCompletedJobsComponent } from './admin/view-completed-jobs/view-com
     RestoreJobComponent,
     ViewAllJobsComponent,
     ViewCurrentJobsComponent,
-    ViewCompletedJobsComponent
+    ViewCompletedJobsComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
