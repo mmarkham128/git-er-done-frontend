@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MyJobsComponent } from './employee/my-jobs/my-jobs.component';
-import { CompleteJobComponent } from './employee/complete-job/complete-job.component';
 import { CreateEmployeeComponent } from './signup/create-employee/create-employee.component';
 import { ViewEmployeeComponent } from './signup/view-employee/view-employee.component';
 import { EditEmployeeComponent } from './signup/edit-employee/edit-employee.component';
@@ -29,7 +28,6 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
     HomePageComponent,
     LoginPageComponent,
     MyJobsComponent,
-    CompleteJobComponent,
     CreateEmployeeComponent,
     ViewEmployeeComponent,
     EditEmployeeComponent,
