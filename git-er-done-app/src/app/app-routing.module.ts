@@ -9,7 +9,6 @@ import { HomePageComponent } from './home-page/home-page.component';
 
 
 import { MyJobsComponent } from './employee/my-jobs/my-jobs.component';
-import { CompleteJobComponent } from './employee/complete-job/complete-job.component';
 import { CreateEmployeeComponent } from './signup/create-employee/create-employee.component';
 import { ViewEmployeeComponent } from './signup/view-employee/view-employee.component';
 import { EditEmployeeComponent } from './signup/edit-employee/edit-employee.component';
@@ -30,14 +29,13 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'my-jobs', component: MyJobsComponent },
-  { path: 'complete-job', component:CompleteJobComponent} ,
   { path: 'signup', component: CreateEmployeeComponent },
   { path: 'employee-profile', component: ViewEmployeeComponent },
   { path: 'edit-employee', component: EditEmployeeComponent },
   { path: 'create-job', component: CreateJobComponent },
   { path: 'edit-job', component: EditJobComponent },
   { path: 'restore-job', component: RestoreJobComponent },
-  { path: 'all-jobs', component: ViewAllJobsComponent } ,
+  { path: 'all-jobs', component: ViewAllJobsComponent },
   { path: 'current-jobs', component: ViewCurrentJobsComponent },
   { path: 'completed-jobs', component: ViewCompletedJobsComponent },
   { path: 'logout', component: LogoutComponent},
