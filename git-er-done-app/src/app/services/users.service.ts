@@ -34,7 +34,7 @@ export class UsersService {
 
 
     login(formValues) { console.log("Git Gud Kid", formValues)
-      return this.http.post<User>("http://localhost:3000/users/login", { formValues})
+      return this.http.post<User>("http://localhost:3000/users/login", { formValues})}
 
 addUser(
   employeeFirstName: string,
