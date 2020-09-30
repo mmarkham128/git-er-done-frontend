@@ -44,8 +44,8 @@
       <!-- <input class="input is-rounded is-small is-black column is-2" name="contactState" type="text" placeholder="State" ngModel required #contactState="ngModel"> -->
       <div class="field">
         <div class="control">
-          <div class="select is-black is-rounded is-small" name="contactState" >
-            <select>
+          <div class="select is-black is-rounded is-small"  >
+            <select name="contactState" ngModel required #contactState="ngModel">
               <option>State</option>
               <option>AL</option>
               <option>AK</option>
@@ -110,7 +110,7 @@
         <label class="label">Employees</label>
         <p class="control">
           <span class="select is-small is-rounded is-black">
-            <select>
+            <select name="employeeFirstName" ngModel required #employeeFirstName="ngModel">
               <option>Select Employee</option>
               <option>Christopher Louden</option>
               <option>Lindsey Darnell</option>
