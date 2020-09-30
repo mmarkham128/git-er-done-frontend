@@ -34,7 +34,12 @@ export class UsersService {
 
 
     login(formValues) { console.log("Git Gud Kid", formValues)
-      return this.http.post<User>("http://localhost:3000/users/login", { formValues})}
+      return this.http.post<User>("http://localhost:3000/users/login", { formValues})
+      .pipe(map(user => {
+        this.userSubject.next(user);
+        return user;
+      }));
+    }
 
 addUser(
   employeeFirstName: string,
@@ -42,7 +47,7 @@ addUser(
     employeeCellNumber: number,
     username: string,
     password: string,
-     admin: boolean,
+    admin: boolean,
     employeeID: number,
     id:string ){
   const user: User = {id: null, employeeFirstName:employeeFirstName, employeeLastName:employeeLastName,employeeCellNumber:employeeCellNumber, username:username, password:password, admin:admin, employeeID:employeeID, };
@@ -59,7 +64,7 @@ getUserUpdateListener(){
   return this.usersUpdated.asObservable();
 }
 
-          
+
 
 }
 
