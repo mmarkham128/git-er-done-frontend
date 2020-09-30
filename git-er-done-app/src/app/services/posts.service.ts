@@ -2,6 +2,7 @@ import { Post } from '../models/posts'
 import { Injectable } from '@angular/core'
 import {Subject} from 'rxjs'
 import { HttpClient} from '@angular/common/http'
+import { map } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,10 @@ export class PostsService {
       return this.postsUpdated.asObservable();
   }
 
+  getPost(id: string) {
+    return { ...this.posts.find(p => p.id === id) };
+  }
+
   addPost(
     businessName: string,
     contactFirstName: string,
@@ -42,12 +47,35 @@ export class PostsService {
     jobCompleted: boolean,
     jobDeleted: boolean){
     const post: Post = {id: null, businessName:businessName, contactFirstName:contactFirstName,contactLastName:contactLastName, contactMainPhoneNumber:contactMainPhoneNumber, contactStreet:contactStreet, contactCity:contactCity, contactState:contactState, contactZip:contactZip, employeeFirstName:employeeFirstName, employeeLastName:employeeLastName, jobNotes:jobNotes, employeeID:employeeID, jobCompleted:jobCompleted,jobDeleted:jobDeleted  };
-    this.http.post<{message: string}>("http://localhost:3000/api/posts", post)
+    this.http.post<{message: string; postId: string}>("http://localhost:3000/api/posts", post)
     .subscribe(responseData => {
+      const id = responseData.postId;
+      post.id = id;
         console.log(responseData)
-    })
-    this.posts.push(post)
+        this.posts.push(post)
     this.postsUpdated.next([...this.posts]);
+    })
+}
+
+updatePost(id: string, 
+  businessName: string,
+  contactFirstName: string,
+  contactLastName: string,
+  contactMainPhoneNumber: string,
+  contactStreet: string,
+  contactCity: string,
+  contactState: string,
+  contactZip: string,
+  employeeFirstName: string,
+  employeeLastName: string,
+  jobNotes: string,
+  employeeID: number,
+  jobCompleted: boolean,
+  jobDeleted: boolean) {
+  const post: Post = { id: id, businessName: businessName, contactFirstName: contactFirstName, contactLastName: contactLastName, contactMainPhoneNumber: contactMainPhoneNumber, contactStreet: contactStreet, contactCity: contactCity, contactState: contactState, contactZip: contactZip, employeeFirstName: employeeFirstName, employeeLastName: employeeLastName, jobNotes: jobNotes, employeeID: employeeID, jobCompleted: jobCompleted, jobDeleted: jobDeleted  };
+  this.http
+    .put("http://localhost:3000/api/posts/" + id, post)
+    .subscribe(response => console.log(response));
 }
 }
 
