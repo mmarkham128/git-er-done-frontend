@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { from, Subscription } from 'rxjs';
+// executes the observable
+import { observable, Subscription } from 'rxjs';
 import { Post } from '../../models/posts';
 import { PostsService } from '../../services/posts.service'
 
