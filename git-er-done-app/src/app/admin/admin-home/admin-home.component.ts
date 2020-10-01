@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-admin-home',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-home.component.css']
 })
 export class AdminHomeComponent implements OnInit {
-
-  constructor() { }
+  adminHome
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    
   }
 
 }
+
+// this.route.queryParams.subscribe(params => {
+//   this.adminHome = params['adminHome']
+// })
