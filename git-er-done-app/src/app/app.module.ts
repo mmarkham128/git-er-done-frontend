@@ -23,6 +23,7 @@ import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,7 @@ import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
     ViewCompletedJobsComponent,
     LogoutComponent,
     AdminHomeComponent,
-    AdminNavComponent
+    AdminNavComponent,
   ],
   imports: [
     BrowserModule,

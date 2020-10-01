@@ -6,6 +6,7 @@
         Completed Jobs
       </h1>
       <br>
+      <!-- secondary nav bar for the admin - comes from the admin-nav component -->
       <app-admin-nav></app-admin-nav>
     </div>
   </div>
@@ -14,7 +15,50 @@
 <section class="hero is-primary is-fullheight-with-navbar">
   <div class="hero-body">
     <div class="container">
-      
-    </div>
-  </div>
-</section>
+
+      <!-- BACKGROUND COLOR -->
+      <section class="hero has-background-primary">
+        <div class="hero-body">
+
+          <!-- JOB CARD -->
+          <div class="columns is-multiline my-6 mx-6">
+            <!-- LOOP FOR THE JOB CARDS -->
+            <div *ngFor="let post of posts" class="column is-one-third">
+              <!-- NEED NGIF HELP -->
+              <div *ngIf="post.jobCompleted==='true'">
+
+              
+              <div class="card">
+                <header class="card-header">
+                  <p class="card-header-title is-bold has-background-info has-text-white">
+                    Business Name:
+                    <br>
+                    {{post.businessName}}
+                  </p>
+                </header>
+                <div class="card-content">
+                  <div class="content">
+                    <p>
+                      <strong>Contact Name: </strong> {{post.contactFirstName}} {{post.contactLastName}}
+                      <br>
+                      <strong>Phone Number: </strong>{{post.contactMainPhoneNumber}} <br>
+                      <strong>Address: </strong>{{post.contactStreet}} <br>
+                      {{post.contactCity}}, {{post.contactState}} {{post.contactZip}} <br>
+                      <strong>Assigned To: </strong>{{post.employeeFirstName}} {{post.employeeLastName}} <br>
+                      <strong>Job Notes: </strong>
+                    </p>
+                    <textarea class="textarea" placeholder="jobNotes">{{post.jobNotes}}</textarea>
+                  </div>
+                </div>
+                <footer class="card-footer level">
+                  <input class="button is-medium is-success" type="submit" value=" Edit"
+                    [routerLink]="['/edit', post.id]">
+                  <input class="button is-medium is-danger" type="submit" value="Delete">
+                </footer>
+              </div>
+            </div>
+          </div>
+          </div>
+
+        </div>
+      </section>
