@@ -15,6 +15,9 @@ export class PostsService {
 
   constructor(private http: HttpClient) { }
 
+
+
+  // get a list of all jobs
   getPosts() {
     this.http.get<{message: string, posts: Post[] }>('http://localhost:3000/api/posts')
     .subscribe((postData) => {
@@ -22,6 +25,14 @@ export class PostsService {
         this.postsUpdated.next([...this.posts])
     });
     }
+    // get a list of all jobs where jobCompleted is true
+    getPostsCompleted() {
+      this.http.get<{message: string, posts: Post[] }>('http://localhost:3000/api/posts/view?jobCompleted=true')
+      .subscribe((postData) => {
+          this.posts = postData.posts
+          this.postsUpdated.next([...this.posts])
+      });
+      }
 
     getPostUpdateListener() {
       return this.postsUpdated.asObservable();
