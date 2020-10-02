@@ -17,7 +17,7 @@ export class ViewCompletedJobsComponent implements OnInit {
     constructor(public postsService: PostsService) { }
   
     ngOnInit(){
-      this.postsService.getPosts()
+      this.postsService.getPostsCompleted()
     this.postsSub = this.postsService.getPostUpdateListener()
       .subscribe((posts: Post[]) => {
           this.posts = posts;
