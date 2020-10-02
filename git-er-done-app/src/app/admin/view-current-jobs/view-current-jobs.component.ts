@@ -18,7 +18,7 @@ export class ViewCurrentJobsComponent implements OnInit {
   
     // implement OnInit's `ngOnInit` method 
     ngOnInit(){
-      this.postsService.getPosts()
+      this.postsService.getPostsCurrent()
     this.postsSub = this.postsService.getPostUpdateListener()
       .subscribe((posts: Post[]) => {
           this.posts = posts;
