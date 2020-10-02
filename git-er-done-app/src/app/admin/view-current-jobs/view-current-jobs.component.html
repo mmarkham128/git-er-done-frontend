@@ -27,10 +27,10 @@
 
       <!-- BACKGROUND COLOR -->
       <section class="hero has-background-primary">
-        <div class="hero-body">
+        <div class="hero-body columns is-multiline">
 
           <!-- JOB CARD -->
-          <div class="columns is-multiline my-6 mx-6">
+          <!-- <div class="columns is-multiline my-6 mx-6"> -->
             <!-- LOOP FOR THE JOB CARDS -->
             <div *ngFor="let post of posts" class="column is-one-third">
 
@@ -59,6 +59,9 @@
                     <textarea class="textarea" placeholder="jobNotes">{{post.jobNotes}}</textarea>
                   </div>
                 </div>
+
+                
+
                 <footer class="card-footer level">
                   <input class="button is-medium is-success" type="submit" value=" Edit"
                     [routerLink]="['/edit', post.id]">
@@ -67,7 +70,7 @@
               </div>
             </div>
           </div>
-          </div>
+          <!-- </div> -->
 
         </div>
       </section>
