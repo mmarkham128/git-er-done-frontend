@@ -41,6 +41,16 @@ export class UsersService {
       }));
     }
 
+
+    // get a list of all employees
+  getUsers() {
+    this.http.get<{message: string, users: User[] }>('http://localhost:3000/api/users')
+    .subscribe((userData) => {
+        this.users = userData.users
+        this.usersUpdated.next([...this.users])
+    });
+    }
+
 addUser(
   employeeFirstName: string,
     employeeLastName: string,
