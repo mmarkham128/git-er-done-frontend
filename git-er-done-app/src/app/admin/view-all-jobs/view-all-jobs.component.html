@@ -42,12 +42,11 @@
                 <strong>Assigned To: </strong>{{post.employeeFirstName}} {{post.employeeLastName}} <br>
                 <strong>Job Notes: </strong>
               </p>
-              <textarea class="textarea" placeholder="jobNotes">{{post.jobNotes}}</textarea>
+              <textarea readonly class="textarea" placeholder="jobNotes">{{post.jobNotes}}</textarea>
             </div>
             
           </div>
           <footer class="card-footer level">
-            <input class="button is-medium is-success" type="submit" value=" Edit" [routerLink]="['/edit', post._id]">
             <input class="button is-medium is-danger" type="submit" value="Delete">
           </footer>
         </div>
