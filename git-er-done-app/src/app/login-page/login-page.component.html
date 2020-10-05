@@ -3,12 +3,13 @@
     <div class="container">
       <div class="columns is-centered">
         <div column is-5-tablet is-4-desktop is-3-widescreen>
-          <form #f = "ngForm" class="box" (ngSubmit)="onSubmit(f)">
+          <form #f = "ngForm" class="box" (ngSubmit)="onSubmit(f)" *ngIf="!isLoading">
             <h3 class="title is-3 has-text-centered">Login</h3>
             <div class="field">
-              <label for="" class="label">Email</label>
+              <label for="" class="label">Username</label>
               <div class="control has-icons-left">
-                <input type="text" placeholder="email" class="input" required #email = "ngModel" ngModel name="email">
+                <input type="text" placeholder="username" class="input" required #username = "ngModel" ngModel name="username">
+
                 <span class="icon is-small is-left">
                   <i class="fa fa-envelope"></i>
                 </span>

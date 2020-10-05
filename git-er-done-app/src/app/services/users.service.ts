@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, Subject } from 'rxjs'
 import { HttpClient } from '@angular/common/http'
-import { map } from 'rxjs/operators'
-
 
 import { User } from '../models/users'
 
@@ -12,8 +10,6 @@ import { User } from '../models/users'
   providedIn: 'root'
 })
 export class UsersService {
-
-  // url: string = "http://localhost:3000/users/login"
 
   private userSubject: BehaviorSubject<User>;
   public user: Observable<User>;
@@ -33,15 +29,6 @@ export class UsersService {
     }
 
 
-    login(formValues) { console.log("Git Gud Kid", formValues)
-      return this.http.post<User>("http://localhost:3000/users/login", { formValues})
-      .pipe(map(user => {
-        this.userSubject.next(user);
-        return user;
-      }));
-    }
-
-
     // get a list of all employees
   getUsers() {
     this.http.get<{message: string, users: User[] }>('http://localhost:3000/api/users')
@@ -50,25 +37,6 @@ export class UsersService {
         this.usersUpdated.next([...this.users])
     });
     }
-
-addUser(
-  employeeFirstName: string,
-    employeeLastName: string,
-    employeeCellNumber: number,
-    username: string,
-    password: string,
-    admin: boolean,
-    employeeID: number,
-    id:string ){
-  const user: User = {id: null, employeeFirstName:employeeFirstName, employeeLastName:employeeLastName,employeeCellNumber:employeeCellNumber, username:username, password:password, admin:admin, employeeID:employeeID, };
-
-  this.http.post<{message: string}>("http://localhost:3000/api/users", user)
-  .subscribe(responseData => {
-      console.log(responseData)
-  })
-  this.users.push(user)
-  this.usersUpdated.next([...this.users]);
-}
 
 getUserUpdateListener(){
   return this.usersUpdated.asObservable();
