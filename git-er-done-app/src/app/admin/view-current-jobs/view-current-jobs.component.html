@@ -44,7 +44,7 @@
             
           </div>
           <footer class="card-footer level">
-            <input class="button is-medium is-success" type="submit" value="Edit">
+            <input class="button is-medium is-success" type="submit" [routerLink]="['/edit', post._id]" value="Edit">
             <input class="button is-medium is-info" type="submit" value="Complete">
           </footer>
         </div>
