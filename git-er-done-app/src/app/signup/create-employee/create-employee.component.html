@@ -3,27 +3,33 @@
         <div class="container">
           <div class="columns is-centered">
             <div column is-5-tablet is-4-desktop is-3-widescreen>
-              <form action="POST" class="box">
+              <form class="box" #signupForm="ngForm" (ngSubmit)="onAddUser(signupForm)" *ngIf="!isLoading">
                 <h3 class="title is-3 has-text-centered">
                   Welcome to the Sign Up Page
                 </h3>
-    
+
                 <label class="label">Employee Information</label>
                 <div class="contactName">
                   <input
                     class="input is-rounded is-small is-black column is-6"
                     type="text"
                     placeholder="First Name"
+                    required #employeeFirstName="ngModel" ngModel
+                    name="employeeFirstName"
                   />
                   <input
                     class="input is-rounded is-small is-black column is-6"
                     type="text"
                     placeholder="Last Name"
+                    required #employeeLastName="ngModel" ngModel
+                    name="employeeLastName"
                   /> <br>
-                    <input
+                  <input
                     class="input is-rounded is-small is-black column is-6"
-                    type="text"
+                    type="number"
                     placeholder="Cell Phone Number"
+                    required #employeeCellNumber="ngModel" ngModel
+                    name="employeeCellNumber"
                   />
                 </div>
                 <label class="label">Login Information</label>
@@ -32,25 +38,29 @@
                     class="input is-rounded is-small is-black column is-6"
                     type="text"
                     placeholder="Username"
+                    required #username="ngModel" ngModel
+                    name="username"
                   />
-        
+
                   <input
                     class="input is-rounded is-small is-black column is-6"
-                    type="text"
+                    type="password"
                     placeholder="Password"
+                    required #password="ngModel" ngModel
+                    name="password"
                   />
-                  
-                  <input
+
+    <!--               <input
                     class="input is-rounded is-small is-black column is-6"
                     type="text"
                     placeholder="Re-Verify Password"
-                  />
+                  /> -->
                 </div>
                 <br />
-    
+
                 <div class="buttons level">
-                  <button class="button is-link">Submit</button>
-                  <button class="button is-dark">Cancel</button>
+                  <button class="button is-link" type="submit">Submit</button>
+                  
                 </div>
               </form>
             </div>
@@ -58,5 +68,5 @@
         </div>
       </div>
     </section>
-    
+
 
