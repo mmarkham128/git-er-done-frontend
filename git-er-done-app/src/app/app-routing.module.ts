@@ -41,6 +41,7 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent},
   { path: 'admin-home', component: AdminHomeComponent},
   { path: 'edit/:postId', component: CreateJobComponent},
+  { path: 'remove/:postId', component: ViewAllJobsComponent},
 ];
 
 @NgModule({
