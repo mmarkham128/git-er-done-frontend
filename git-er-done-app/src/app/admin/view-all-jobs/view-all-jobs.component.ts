@@ -21,6 +21,8 @@ private postsSub: Subscription;
         this.posts = posts;
     });
 }
+
+
 ngOnDestroy(){
     this.postsSub.unsubscribe();
 }
