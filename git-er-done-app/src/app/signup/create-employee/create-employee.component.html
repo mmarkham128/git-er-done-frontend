@@ -5,7 +5,7 @@
             <div column is-5-tablet is-4-desktop is-3-widescreen>
               <form class="box" #signupForm="ngForm" (ngSubmit)="onAddUser(signupForm)" *ngIf="!isLoading">
                 <h3 class="title is-3 has-text-centered">
-                  Welcome to the Sign Up Page
+                      Welcome to the Sign Up Page
                 </h3>
 
                 <label class="label">Employee Information</label>
@@ -26,19 +26,14 @@
                   /> <br>
                   <input
                     class="input is-rounded is-small is-black column is-6"
-                    type="number"
+                    type="text"
                     placeholder="Cell Phone Number"
                     required #employeeCellNumber="ngModel" ngModel
                     name="employeeCellNumber"
                   /> <br>
-                <input
-                    class="input is-rounded is-small is-black column is-6"
-                    type="text"
-                    placeholder="Employee ID"
-                    class="input"
-                    required #employeeID = "ngModel"
-                    ngModel name="employeeID">
+                <input class="input is-rounded is-small is-black column is-6" type="text" placeholder="Employee ID" required #employeeID="ngModel" ngModel name="employeeID">
                 </div>
+
                 <label class="label">Login Information</label>
                 <div class="usernameAndPassword">
                   <input
@@ -56,19 +51,9 @@
                     required #password="ngModel" ngModel
                     name="password"
                   />
-
-    <!--               <input
-                    class="input is-rounded is-small is-black column is-6"
-                    type="text"
-                    placeholder="Re-Verify Password"
-                  /> -->
                 </div>
-                <br />
-
-                <div class="buttons level">
+                
                   <button class="button is-link" type="submit">Submit</button>
-                  
-                </div>
               </form>
             </div>
           </div>

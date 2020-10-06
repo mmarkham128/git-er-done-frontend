@@ -37,10 +37,11 @@
       <input class="input is-rounded is-small is-black column is-5" name="contactCity" type="text" placeholder="City" [ngModel]="post?.contactCity" required #contactCity="ngModel">
       <br>
       <!-- <input class="input is-rounded is-small is-black column is-2" name="contactState" type="text" placeholder="State" ngModel required #contactState="ngModel"> -->
+
       <div class="field">
         <div class="control">
           <div class="select is-black is-rounded is-small"  >
-            <select name="contactState" [ngModel]="post?.contactState" required #contactState="ngModel">
+            <select name="contactState" placeholder="State" [ngModel]="post?.contactState" required #contactState="ngModel">
               <option>State</option>
               <option>AL</option>
               <option>AK</option>
@@ -102,25 +103,29 @@
     </div>
       <input class="input is-rounded is-small is-black column is-5" name="contactMainPhoneNumber" type="tel" placeholder="Phone Number" [ngModel]="post?.contactMainPhoneNumber" required #contactMainPhoneNumber="ngModel">
       <div class="field">
-        <label class="label">Employees</label>
-        <p class="control">
+        <br>
+        <label class="label">Employee</label>
+        <input class="input is-rounded is-small is-black column is-5" type="text" name = "employeeID" placeholder="Employee ID" [ngModel]="post?.employeeID" required #employeeID="ngModel">
+        <!-- <p class="control">
           <span class="select is-small is-rounded is-black">
-            <select name="employeeFirstName" [ngModel]="post?.employeeFirstName" required #employeeFirstName="ngModel">
-              <option>Select Employee</option>
+            <select name="employeeFirstName" [ngModel]="post?.employeeFirstName" required #employeeFirstName="ngModel"> -->
+              <!-- <option>Select Employee</option>
               <option>Christopher Louden</option>
               <option>Lindsey Darnell</option>
               <option>Michael Markham</option>
               <option>Konya Ferrell</option>
               <option>Charlie Blackmon</option>
               <option>Trevor Story</option>
-              <option>Todd Helton</option>
+              <option>Todd Helton</option> -->
               <!-- <option *ngFor="let post of posts" [value]="post.value">
                 {{post.employeeFirstName}} {{post.employeeLastName}}
                 </option> -->
-            </select>
+            <!-- </select>
           </span>
-        </p>
+        </p> -->
       </div>
+      <br>
+      <label class="label">Job Notes</label>
       <div class="textArea is-rounded">
         <div class="columns">
           <div class="column is-12">
