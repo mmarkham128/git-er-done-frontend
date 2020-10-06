@@ -18,7 +18,11 @@ private postsSub: Subscription;
     this.postsService.getPosts()
   this.postsSub = this.postsService.getPostUpdateListener()
     .subscribe((posts: Post[]) => {
+        console.log(posts);
         this.posts = posts;
+    },
+    error => {
+      console.log(error);
     });
 }
 
