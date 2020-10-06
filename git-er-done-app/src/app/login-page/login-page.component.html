@@ -8,25 +8,19 @@
             <div class="field">
               <label for="" class="label">Username</label>
               <div class="control has-icons-left">
-                <input type="text" placeholder="username" class="input" required #username = "ngModel" ngModel name="username">
-
-                <span class="icon is-small is-left">
-                  <i class="fa fa-envelope"></i>
-                </span>
+                <input type="text" placeholder="Username" class="input" required #username = "ngModel" ngModel name="username">
+                
               </div>
             </div>
             <div class="field">
               <label for="" class="label">Password</label>
               <div class="control has-icons-left">
                 <input type="password" placeholder="********" class="input" required #password = "ngModel" ngModel name="password">
-                <span class="icon is-small is-left">
-                  <i class="fa fa-lock"></i>
-                </span>
               </div>
             </div>
             <div class="field level">
               <button class="button is-info" type="submit" >Login</button>
-              <button class="button is-info">Cancel</button>
+              <a routerLink="/login"><button class="cancel button is-medium is-info is-inverted" type="reset">Cancel</button></a>
             </div>
           </form>
         </div>
@@ -34,4 +28,9 @@
     </div>
   </div>
 </section>
+
+<!-- Put in above once it's known about how the login route is functioning -->
+<!-- <a routerLink="/my-jobs"><button class="login button is-medium is-info is-inverted">Login</button></a> -->
+<!-- UPDATE CANCEL BUTTON ABOVE SO THAT IT CLEARS THE FIELDS -->
+
 
