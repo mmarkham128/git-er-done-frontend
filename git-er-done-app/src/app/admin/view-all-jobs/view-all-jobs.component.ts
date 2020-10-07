@@ -24,6 +24,7 @@ private postsSub: Subscription;
     error => {
       console.log(error);
     });
+    
 }
 
 
