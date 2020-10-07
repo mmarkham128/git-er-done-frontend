@@ -11,7 +11,7 @@ export class Post {
     employeeFirstName: string;
     employeeLastName: string;
     jobNotes: string;
-    employeeID: number;
+    employeeID: string;
     jobCompleted: boolean;
     jobDeleted: boolean;
 };

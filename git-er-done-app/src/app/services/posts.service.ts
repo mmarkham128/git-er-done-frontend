@@ -64,7 +64,7 @@ export class PostsService {
     employeeFirstName: string,
     employeeLastName: string,
     jobNotes: string,
-    employeeID: number,
+    employeeID: string,
     jobCompleted: boolean,
     jobDeleted: boolean){
     const post: Post = {id: null, businessName:businessName, contactFirstName:contactFirstName,contactLastName:contactLastName, contactMainPhoneNumber:contactMainPhoneNumber, contactStreet:contactStreet, contactCity:contactCity, contactState:contactState, contactZip:contactZip, employeeFirstName:employeeFirstName, employeeLastName:employeeLastName, jobNotes:jobNotes, employeeID:employeeID, jobCompleted:jobCompleted,jobDeleted:jobDeleted  };
@@ -90,7 +90,7 @@ updatePost(id: string,
   employeeFirstName: string,
   employeeLastName: string,
   jobNotes: string,
-  employeeID: number,
+  employeeID: string,
   jobCompleted: boolean,
   jobDeleted: boolean) {
   const post: Post = { id: id, businessName: businessName, contactFirstName: contactFirstName, contactLastName: contactLastName, contactMainPhoneNumber: contactMainPhoneNumber, contactStreet: contactStreet, contactCity: contactCity, contactState: contactState, contactZip: contactZip, employeeFirstName: employeeFirstName, employeeLastName: employeeLastName, jobNotes: jobNotes, employeeID: employeeID, jobCompleted: jobCompleted, jobDeleted: jobDeleted  };
@@ -113,7 +113,7 @@ removePost(id: string,
   employeeFirstName: string,
   employeeLastName: string,
   jobNotes: string,
-  employeeID: number,
+  employeeID: string,
   jobCompleted: boolean,
   jobDeleted: boolean) {
   const post: Post = { id: id, businessName: businessName, contactFirstName: contactFirstName, contactLastName: contactLastName, contactMainPhoneNumber: contactMainPhoneNumber, contactStreet: contactStreet, contactCity: contactCity, contactState: contactState, contactZip: contactZip, employeeFirstName: employeeFirstName, employeeLastName: employeeLastName, jobNotes: jobNotes, employeeID: employeeID, jobCompleted: jobCompleted, jobDeleted: jobDeleted };
@@ -122,6 +122,7 @@ removePost(id: string,
     .subscribe(response => console.log(response));
 }
 }
+
 
 
 
