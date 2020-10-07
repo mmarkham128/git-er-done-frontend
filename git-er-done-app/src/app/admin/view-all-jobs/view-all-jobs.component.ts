@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { from, Subscription } from 'rxjs';
 import { Post } from '../../models/posts';
-import { PostsService } from '../../services/posts.service'
+import { PostsService } from '../../services/posts.service';
+import { HttpClient } from '@angular/common/http';
+// import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-view-all-jobs',
