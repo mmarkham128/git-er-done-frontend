@@ -23,34 +23,37 @@
     <div class="columns is-multiline my-6 mx-6">
       <!-- LOOP FOR THE JOB CARDS -->
       <div *ngFor="let post of posts" class="column is-one-third">
-        <div class="card">
-          <header class="card-header">
-            <p class="card-header-title is-bold has-background-info has-text-white">
-              Business Name:
-              <br>
-              {{post.businessName}}
-            </p>
-          </header>
-          <div class="card-content">
-            <div class="content">
-              <p>
-                <strong>Contact Name: </strong> {{post.contactFirstName}} {{post.contactLastName}}
+        <div *ngIf="!post.jobDeleted">
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title is-bold has-background-info has-text-white">
+                Business Name:
                 <br>
-                <strong>Phone Number: </strong>{{post.contactMainPhoneNumber}} <br>
-                <strong>Address: </strong>{{post.contactStreet}} <br>
-                {{post.contactCity}}, {{post.contactState}} {{post.contactZip}} <br>
-                <strong>Assigned To: </strong>{{post.employeeID}}  <br>
-                <strong>Job Notes: </strong>
+                {{post.businessName}}
               </p>
-              <textarea readonly class="textarea" placeholder="jobNotes">{{post.jobNotes}}</textarea>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <p>
+                  <strong>Contact Name: </strong> {{post.contactFirstName}} {{post.contactLastName}}
+                  <br>
+                  <strong>Phone Number: </strong>{{post.contactMainPhoneNumber}} <br>
+                  <strong>Address: </strong>{{post.contactStreet}} <br>
+                  {{post.contactCity}}, {{post.contactState}} {{post.contactZip}} <br>
+                  <strong>Assigned To: </strong>{{post.employeeID}}  <br>
+                  <strong>Job Notes: </strong>
+                </p>
+                <textarea readonly class="textarea" placeholder="jobNotes">{{post.jobNotes}}</textarea>
+              </div>
+              
             </div>
-            
+            <footer class="card-footer level">
+              <input class="button is-medium is-danger" (click)="removePost(post._id)" type="submit" value="Remove">
+              <input class="button is-medium is-success" [routerLink]="['/edit', post._id]" type="submit" value="Edit">
+            </footer>
           </div>
-          <footer class="card-footer level">
-            <input class="button is-medium is-danger" [routerLink]="['/removeJob', post._id]" type="submit" value="Remove">
-            <input class="button is-medium is-success" [routerLink]="['/edit', post._id]" type="submit" value="Edit">
-          </footer>
         </div>
+        
       </div>
     </div>
   </div>

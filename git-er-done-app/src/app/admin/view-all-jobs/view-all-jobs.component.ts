@@ -3,6 +3,7 @@ import { from, Subscription } from 'rxjs';
 import { Post } from '../../models/posts';
 import { PostsService } from '../../services/posts.service';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 // import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -13,8 +14,9 @@ import { HttpClient } from '@angular/common/http';
 export class ViewAllJobsComponent implements OnInit {
 posts: Post []= []
 private postsSub: Subscription;
+id: string
 
-  constructor(public postsService: PostsService) { }
+  constructor(public postsService: PostsService, private router: Router) { }
 
   ngOnInit(){
     this.postsService.getPosts()
@@ -27,6 +29,15 @@ private postsSub: Subscription;
       console.log(error);
     });
     
+}
+
+removePost(id: string): void{
+  console.log(id);
+  this.postsService.removePost(id).subscribe((data: Post) => {
+    console.log(data);
+    this.ngOnInit()
+
+  })
 }
 
 
