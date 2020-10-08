@@ -30,6 +30,22 @@ private postsSub: Subscription;
 }
 
 
+// removePost() {
+//   this.http.patch(“:_id”, {
+//   “jobDeleted”: “true”,
+// })
+// .subscribe(
+//   (val) => {
+//     console.log(“PATCH was successful!”, val);
+// },
+// response => {
+//   console.log(“PATCH call in error”, response);
+// },
+// () => {
+//   console.log(“The PATCH observable is now complete.”);
+// });
+
+
 ngOnDestroy(){
     this.postsSub.unsubscribe();
 }
