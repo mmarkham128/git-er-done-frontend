@@ -3,17 +3,17 @@
     <div class="container">
       <div class="columns is-centered">
         <div column is-5-tablet is-4-desktop is-3-widescreen>
-          <form #f = "ngForm" class="box" (ngSubmit)="onSubmit(f)" *ngIf="!isLoading">
+          <form #form = "ngForm" class="box" (ngSubmit)="onLogin(form)" *ngIf="!isLoading">
             <h3 class="title is-3 has-text-centered">Login</h3>
             <div class="field">
-              <label for="" class="label">Username</label>
+              <label for="username" class="label">Username</label>
               <div class="control has-icons-left">
                 <input type="text" placeholder="Username" class="input" required #username = "ngModel" ngModel name="username">
-                
+
               </div>
             </div>
             <div class="field">
-              <label for="" class="label">Password</label>
+              <label for="password" class="label">Password</label>
               <div class="control has-icons-left">
                 <input type="password" placeholder="********" class="input" required #password = "ngModel" ngModel name="password">
               </div>

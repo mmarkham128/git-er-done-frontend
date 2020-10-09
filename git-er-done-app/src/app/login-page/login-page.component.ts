@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { UsersService} from '../services/users.service'
-import {  Router, ActivatedRoute } from '@angular/router'
-import { first } from 'rxjs/operators'
 import { NgForm } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 
 
@@ -12,27 +10,21 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-
   isLoading = false;
-  submitted = false;
-  email: string;
-  password: string;
 
-  constructor(
-    private route : ActivatedRoute,
-    private router: Router,
-    // private usersService: UsersService
+  constructor(public authService: AuthService ) { }
 
-  ){ }
-
-
-  ngOnInit(){
-
+  onLogin(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+    this.authService.login(form.value.username,
+      form.value.password,
+      form.value.employeeFirstName,
+      form.value.employeeLastName,
+      form.value.employeeCellNumber,
+      form.value.employeeID)
   }
 
-
-  onSubmit(f: NgForm) {
-    console.log(f.value)
-}
-
+  ngOnInit(): void{ }
 }
