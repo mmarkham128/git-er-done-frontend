@@ -19,4 +19,18 @@ export class AuthService {
       console.log(response)
     });
   }
+
+  login(username: string, password:string, employeeFirstName:string, employeeLastName: string, employeeCellNumber: number, employeeID: number){
+    const authData: AuthData = {
+      username: username,
+      password: password,
+      employeeFirstName: employeeFirstName,
+      employeeLastName: employeeLastName,
+      employeeCellNumber: employeeCellNumber,
+      employeeID: employeeID }
+    this.http.post("http://localhost:3000/api/users/login", authData)
+    .subscribe(response => {
+      console.log(response);
+    })
+  }
 }
