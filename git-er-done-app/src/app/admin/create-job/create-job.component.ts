@@ -4,6 +4,7 @@ import { ActivatedRoute, ParamMap } from "@angular/router";
 
 import { PostsService } from '../../services/posts.service';
 import { Post } from "../../models/posts";
+import { CommonModule } from '@angular/common';
 
 
 @Component({
