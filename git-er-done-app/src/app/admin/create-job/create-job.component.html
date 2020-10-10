@@ -19,10 +19,10 @@
       <div class="columns is-centered">
         <div column is-5-tablet is-4-desktop is-3-widescreen>
   
-      <form  class="box" (submit)="onSavePost(postForm)" #postForm="ngForm">
+      <form  class="box" (submit)="onSavePost(postForm)" #postForm="ngForm" >
       <h3 class="title is-3 has-text-centered">Job Form</h3>
       <label class="label">Business Name</label>
-      <input class="input is-rounded is-small is-black column is-12" type="text" name = "businessName" placeholder="Customer Business Name" [ngModel]="post?.businessName" required #businessName="ngModel">
+      <input class="input is-rounded is-small is-black column is-12" type="text" name = "businessName" placeholder="Customer Business Name"  [ngModel]="post?.businessName" required #businessName="ngModel">
       <br>
       <label class="label ">Contact Name</label>
       <div class="contactName level">

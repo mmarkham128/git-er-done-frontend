@@ -23,7 +23,7 @@
     <div class="columns is-multiline my-6 mx-6">
       <!-- LOOP FOR THE JOB CARDS -->
       <div *ngFor="let post of posts" class="column is-one-third">
-        <div *ngIf="!post.jobDeleted">
+        <div>
           <div class="card">
             <header class="card-header">
               <p class="card-header-title is-bold has-background-info has-text-white">
@@ -48,8 +48,8 @@
               
             </div>
             <footer class="card-footer level">
-              <input class="button is-medium is-danger" (click)="removePost(post._id)" type="submit" value="Remove">
-              <input class="button is-medium is-success" [routerLink]="['/edit', post._id]" type="submit" value="Edit">
+              <input class="button is-medium is-danger" (click)="removePost(post.id)" type="submit" value="Remove">
+              <input class="button is-medium is-success" [routerLink]="['/edit', post.id]" type="submit" value="Edit">
             </footer>
           </div>
         </div>
