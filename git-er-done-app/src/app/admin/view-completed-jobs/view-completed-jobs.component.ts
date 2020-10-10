@@ -23,6 +23,10 @@ export class ViewCompletedJobsComponent implements OnInit {
           this.posts = posts;
       });
   }
+
+
+
+  
   ngOnDestroy(){
       this.postsSub.unsubscribe();
   }

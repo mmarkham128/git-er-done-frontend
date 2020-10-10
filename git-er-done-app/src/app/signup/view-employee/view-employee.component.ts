@@ -22,6 +22,17 @@ export class ViewEmployeeComponent implements OnInit {
           this.users = users;
       });
   }
+
+  removeEmployee(id: string): void{
+    console.log(id);
+    this.usersService.removeUser(id).subscribe((data: User) => {
+      console.log(data);
+      this.ngOnInit()
+  
+    })
+  }
+
+
   ngOnDestroy(){
       this.usersSub.unsubscribe();
   }
