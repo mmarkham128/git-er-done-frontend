@@ -31,12 +31,21 @@ export class UsersService {
 
     // get a list of all employees
   getUsers() {
-    this.http.get<{message: string, users: User[] }>('http://localhost:3000/api/users/api/users')
+    this.http.get<{message: string, users: User[] }>('http://localhost:3000/api/users/api/users/viewallemployees?employeeDeleted=false')
     .subscribe((userData) => {
         this.users = userData.users
         this.usersUpdated.next([...this.users])
     });
     }
+  
+
+    // relates to the back-end Router.delete
+removeUser(id: string): Observable<any> {
+  return this.http
+    .delete<any>("http://localhost:3000/api/users/api/users/" + id)
+
+
+}
 
     
 
