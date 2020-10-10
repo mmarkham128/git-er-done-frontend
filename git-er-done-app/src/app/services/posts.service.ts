@@ -14,21 +14,31 @@ export class PostsService {
   private posts: Post[]= [];
   private postsUpdated = new Subject<Post[]>();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
+  
 
-
-  // get a list of all jobs
+  // get a list of all jobs where jobs deleted is false
   getPosts() {
-    this.http.get<{message: string, posts: Post[] }>('http://localhost:3000/api/posts')
-    .subscribe((postData) => {
-        this.posts = postData.posts
-        this.postsUpdated.next([...this.posts])
-    });
-    }
+    this.http
+      .get<{ message: string; posts: any }>("http://localhost:3000/api/posts/viewalljobs?jobDeleted=false")
+      .pipe(
+        map(postData => {
+          return postData.posts.map(post => {
+            return {
+              id: post._id, businessName: post.businessName, contactFirstName: post.contactFirstName,contactLastName: post.contactLastName, contactMainPhoneNumber: post.contactMainPhoneNumber, contactStreet: post.contactStreet, contactCity: post.contactCity, contactState: post.contactState, contactZip: post.contactZip, employeeFirstName: post.employeeFirstName, employeeLastName: post.employeeLastName, jobNotes:post.jobNotes, employeeID:post.employeeID, jobCompleted:post.jobCompleted,jobDeleted:post.jobDeleted
+            };
+          });
+        })
+      )
+      .subscribe(transformedPosts => {
+        this.posts = transformedPosts;
+        this.postsUpdated.next([...this.posts]);
+      });
+  }
     // get a list of all jobs where jobCompleted is true
     getPostsCompleted() {
-      this.http.get<{message: string, posts: Post[] }>('http://localhost:3000/api/posts/view?jobCompleted=true')
+      this.http.get<{message: string, posts: Post[] }>('http://localhost:3000/api/posts/viewcompletedjobs?jobCompleted=true')
       .subscribe((postData) => {
           this.posts = postData.posts
           this.postsUpdated.next([...this.posts])
@@ -37,7 +47,7 @@ export class PostsService {
 
       //git a list of all jobs where jobCompleted is false
       getPostsCurrent() {
-        this.http.get<{message: string, posts: Post[] }>('http://localhost:3000/api/posts/view?jobCompleted=false')
+        this.http.get<{message: string, posts: Post[] }>('http://localhost:3000/api/posts/viewcompletedjobs?jobCompleted=false')
         .subscribe((postData) => {
             this.posts = postData.posts
             this.postsUpdated.next([...this.posts])
@@ -49,7 +59,23 @@ export class PostsService {
   }
 
   getPost(id: string) {
-    return { ...this.posts.find(p => p.id === id) };
+    return this.http.get<{_id: string;
+      businessName: string;
+      contactFirstName: string;
+      contactLastName: string;
+      contactMainPhoneNumber: string;
+      contactStreet: string;
+      contactCity: string;
+      contactState: string;
+      contactZip: string;
+      employeeFirstName: string;
+      employeeLastName: string;
+      jobNotes: string;
+      employeeID: string;
+      jobCompleted: boolean;
+      jobDeleted: boolean;}>(
+        "http://localhost:3000/api/posts/view/" + id
+      )
   }
 
   addPost(

@@ -13,8 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./create-job.component.css']
 })
 export class CreateJobComponent implements OnInit {
-  enteredTitle = "";
-  enteredContent = "";
+  isLoading = false
   post: Post;
   private mode = "create";
   private postId: string;
@@ -29,7 +28,9 @@ export class CreateJobComponent implements OnInit {
       if (paramMap.has("postId")) {
         this.mode = "edit";
         this.postId = paramMap.get("postId");
-        this.post = this.postsService.getPost(this.postId);
+        this.postsService.getPost(this.postId).subscribe(postData => {
+          this.post = {id: postData._id, businessName: postData.businessName, contactFirstName: postData.contactFirstName, contactLastName:postData.contactLastName, contactMainPhoneNumber: postData.contactMainPhoneNumber, contactStreet: postData.contactStreet, contactCity: postData.contactCity, contactState: postData.contactState, contactZip: postData.contactZip, employeeFirstName: postData.employeeFirstName, employeeLastName: postData.employeeLastName, jobNotes: postData.jobNotes, employeeID:postData.employeeID, jobCompleted: postData.jobCompleted, jobDeleted: postData.jobDeleted}
+        });
       } else {
         this.mode = "create";
         this.postId = null;

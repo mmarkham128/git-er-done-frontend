@@ -38,6 +38,8 @@ export class UsersService {
     });
     }
 
+    
+
 getUserUpdateListener(){
   return this.usersUpdated.asObservable();
 }
