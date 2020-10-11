@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
-
+import { Router } from '@angular/router'
 
 
 @Component({
@@ -12,7 +12,7 @@ import { AuthService } from '../services/auth.service';
 export class LoginPageComponent implements OnInit {
   isLoading = false;
 
-  constructor(public authService: AuthService ) { }
+  constructor(public authService: AuthService, public router: Router ) { }
 
   onLogin(form: NgForm) {
     if (form.invalid) {
@@ -23,7 +23,9 @@ export class LoginPageComponent implements OnInit {
       form.value.employeeFirstName,
       form.value.employeeLastName,
       form.value.employeeCellNumber,
-      form.value.employeeID)
+      form.value.employeeID);{
+        this.router.navigate(['my-jobs'])
+      }
   }
 
   ngOnInit(): void{ }
