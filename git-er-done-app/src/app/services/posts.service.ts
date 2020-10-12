@@ -140,6 +140,13 @@ removePost(id: string): Observable<any> {
     .delete<any>("http://localhost:3000/api/posts/" + id)
 
 }
+
+completePost(id: string): Observable<any> {
+  return this.http
+   .delete<any>("http://localhost:3000/api/posts/complete/" + id)
+ }
+ 
+
 }
 
 
