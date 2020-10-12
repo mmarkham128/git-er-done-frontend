@@ -55,8 +55,11 @@ export class PostsService {
 	getPostsCompleted() {
 		this.http
 			.get<{ message: string; posts: Post[] }>(
-				'http://localhost:3000/api/posts/viewcompletedjobs?jobCompleted=true'
-			)
+        'http://localhost:3000/api/posts/viewcompletedjobs?jobCompleted=true',
+        {headers:{
+          authorization: "token "+localStorage.getItem("token")
+        }}
+      )
 			.subscribe((postData) => {
 				this.posts = postData.posts;
 				this.postsUpdated.next([ ...this.posts ]);
@@ -67,7 +70,10 @@ export class PostsService {
 	getPostsCurrent() {
 		this.http
 			.get<{ message: string; posts: Post[] }>(
-				'http://localhost:3000/api/posts/viewcompletedjobs?jobCompleted=false'
+        'http://localhost:3000/api/posts/viewcompletedjobs?jobCompleted=false',
+        {headers:{
+          authorization: "token "+localStorage.getItem("token")
+        }}
 			)
 			.subscribe((postData) => {
 				this.posts = postData.posts;
@@ -77,7 +83,10 @@ export class PostsService {
 
 	getPostsEmployee(employeeId: string) {
 		this.http
-			.get<{ message: string; posts: Post[] }>('http://localhost:3000/api/posts/employee/' + employeeId)
+      .get<{ message: string; posts: Post[] }>('http://localhost:3000/api/posts/employee/' + employeeId,
+      {headers:{
+        authorization: "token "+localStorage.getItem("token")
+      }})
 			.subscribe((postData) => {
 				this.posts = postData.posts;
 				this.postsUpdated.next([ ...this.posts ]);
@@ -105,7 +114,10 @@ export class PostsService {
 			employeeID: string;
 			jobCompleted: boolean;
 			jobDeleted: boolean;
-		}>('http://localhost:3000/api/posts/view/' + id);
+    }>('http://localhost:3000/api/posts/view/' + id,
+    {headers:{
+      authorization: "token "+localStorage.getItem("token")
+    }});
 	}
 
 	addPost(
@@ -142,7 +154,10 @@ export class PostsService {
 			jobDeleted: jobDeleted
 		};
 		this.http
-			.post<{ message: string; postId: string }>('http://localhost:3000/api/posts', post)
+      .post<{ message: string; postId: string }>('http://localhost:3000/api/posts', post,
+      {headers:{
+        authorization: "token "+localStorage.getItem("token")
+      }})
 			.subscribe((responseData) => {
 				const id = responseData.postId;
 				post.id = id;
@@ -186,15 +201,25 @@ export class PostsService {
 			jobCompleted: jobCompleted,
 			jobDeleted: jobDeleted
 		};
-		this.http.put('http://localhost:3000/api/posts/' + id, post).subscribe((response) => console.log(response));
+    this.http.put('http://localhost:3000/api/posts/' + id, post,
+    {headers:{
+      authorization: "token "+localStorage.getItem("token")
+    }})
+    .subscribe((response) => console.log(response));
 	}
 
 	// relates to the back-end Router.patch
 	removePost(id: string): Observable<any> {
-		return this.http.delete<any>('http://localhost:3000/api/posts/' + id);
+    return this.http.delete<any>('http://localhost:3000/api/posts/' + id,
+    {headers:{
+      authorization: "token "+localStorage.getItem("token")
+    }});
 	}
 
 	completePost(id: string): Observable<any> {
-		return this.http.delete<any>('http://localhost:3000/api/posts/complete/' + id);
+    return this.http.delete<any>('http://localhost:3000/api/posts/complete/' + id,
+    {headers:{
+      authorization: "token "+localStorage.getItem("token")
+    }});
 	}
 }

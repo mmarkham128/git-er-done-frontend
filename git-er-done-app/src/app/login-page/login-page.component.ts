@@ -25,7 +25,6 @@ export class LoginPageComponent implements OnInit {
       form.value.employeeCellNumber,
       form.value.employeeID);
         this.router.navigate(['my-jobs'])
-      
   }
 
   ngOnInit(): void{ }
