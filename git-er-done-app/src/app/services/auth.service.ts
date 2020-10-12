@@ -40,12 +40,12 @@ export class AuthService {
       employeeLastName: employeeLastName,
       employeeCellNumber: employeeCellNumber,
       employeeID: employeeID }
-    this.http.post<{token: string}>("http://localhost:3000/api/users/login", authData)
-    .subscribe(response => {
-      console.log(response)
-      const token = response.token;
-      this.token = token
-      this.authStatusListener.next(true);
+
+    this.http.post("http://localhost:3000/api/users/login", authData)
+    .subscribe((response: any) => {
+      console.log(response);
+      localStorage.setItem("token",response.token);
+
     })
 
   };
