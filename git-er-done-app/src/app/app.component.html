@@ -1,66 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Hello Bulma!</title>
-    <!-- stylesheet for Bulma -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  </head>
-  
-  <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar is-black is-fixed-top" role="navigation" aria-label="main navigation">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Git ‘Er Done!</title>
+  <!-- stylesheet for Bulma -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar is-black is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
       <div class="navbar-brand">
-        <!-- when icon clicked, will route back to the home page -->
-        <a class="navbar-item" href="" routerLink="home">
-          <img src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/18lrio6r8bvocjpg.jpg" width="75" height="auto">
-        </a>
-
-        <!-- Responsive Hamburger -->
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+        <a href="#" class="navbar-item"></a>
+          <div class="navbar-burger burger" data-target="navmenu" aria-label="menu">
+            <span area-hidden="true"></span>
+            <span area-hidden="true"></span>
+            <span area-hidden="true"></span>
+          </div>
       </div>
-
-        <!-- Navbar Titles -->
-      <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-menu" id="navmenu">
         <div class="navbar-start">
-          <a button class="navbar-item" routerLink="home">
-            Home
-          </a>
-
-          <a button class="navbar-item" routerLink="signup">
-            Signup
-          </a>
-
-          <a button class="navbar-item" routerLink="login">
-            Login
-          </a>
-
-          <a button class="navbar-item" routerLink="home" >
-            <!-- (click)=“onLogout()" -->
-            Logout
-          </a>
-
+          <a href="#" class="navbar-item" routerLink="home">Home</a>
+          <a href="#" class="navbar-item" routerLink="signup">Signup</a>
+          <a href="#" class="navbar-item" routerLink="login">Login</a>
+          <a href="#" class="navbar-item" routerLink="home">Logout</a>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
+  <script>
+    $(document).ready(function() {
+      $('.navbar-burger').click(function() {
+        $('#navmenu').toggleClass('is-active');
+        $('.navbar-burger').toggleClass('is-active');
+      });
+    });
+  </script>
 
+  <router-outlet></router-outlet>
+</body>
 
-<router-outlet></router-outlet>
-
-<script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script>
-
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  </body>
 </html>
-
-
-
-
