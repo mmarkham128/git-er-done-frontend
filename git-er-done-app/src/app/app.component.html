@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
-  
+
   <body>
     <!-- Navigation Bar -->
     <nav class="navbar is-black is-fixed-top" role="navigation" aria-label="main navigation">
@@ -30,22 +30,11 @@
         <!-- Navbar Titles -->
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a button class="navbar-item" routerLink="home">
-            Home
-          </a>
-
-          <a button class="navbar-item" routerLink="signup">
-            Signup
-          </a>
-
-          <a button class="navbar-item" routerLink="login">
-            Login
-          </a>
-
-          <a button class="navbar-item" routerLink="home">
-            Logout
-          </a>
-
+              <a button class="navbar-item" routerLink="home" *ngIf="userIsAuthenticated">Home</a>
+              <a button class="navbar-item" routerLink="signup" *ngIf="!userIsAuthenticated">Signup</a>
+              <a button class="navbar-item" routerLink="login" *ngIf="!userIsAuthenticated">Login</a>
+              <a button class="navbar-item" *ngIf="userIsAuthenticated"> Logout </a>
+              <a button class="navbar-item" routerLink="create-job" *ngIf="userIsAuthenticated">Create Job</a>
         </div>
       </div>
     </nav>
