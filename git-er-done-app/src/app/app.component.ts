@@ -8,7 +8,9 @@ import { AuthService } from './services/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit, OnDestroy {
+
   title = 'git-er-done-app';
 
   userIsAuthenticated = false;

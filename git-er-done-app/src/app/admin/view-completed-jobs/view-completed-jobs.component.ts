@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// executes the observable
 import { observable, Subscription } from 'rxjs';
 import { Post } from '../../models/posts';
 import { PostsService } from '../../services/posts.service'
@@ -13,9 +12,9 @@ import { PostsService } from '../../services/posts.service'
 export class ViewCompletedJobsComponent implements OnInit {
   posts: Post []= []
   private postsSub: Subscription;
-  
+
     constructor(public postsService: PostsService) { }
-  
+
     ngOnInit(){
       this.postsService.getPostsCompleted()
     this.postsSub = this.postsService.getPostUpdateListener()
@@ -25,8 +24,6 @@ export class ViewCompletedJobsComponent implements OnInit {
   }
 
 
-
-  
   ngOnDestroy(){
       this.postsSub.unsubscribe();
   }

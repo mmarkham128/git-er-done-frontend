@@ -47,5 +47,9 @@ export class AuthService {
       this.token = token
       this.authStatusListener.next(true);
     })
+
   };
 };
+  }
+  
+}

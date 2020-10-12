@@ -3,7 +3,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title has-text-centered has-text-white is-size-1">
-        All Jobs
+        Current Jobs
       </h1>
       <br>
       <!-- secondary nav bar for the admin - comes from the admin-nav component -->
@@ -45,7 +45,10 @@
           </div>
           <footer class="card-footer level">
             <input class="button is-medium is-success" type="submit" [routerLink]="['/edit', post._id]" value="Edit">
-            <input class="button is-medium is-info" type="submit" value="Complete">
+            <input class="button is-medium is-info" (click)="completePost(post._id)" type="submit" value="Complete'">
+
+
+            <!-- <input class="button is-medium is-info" type="submit" value="Complete"> -->
           </footer>
         </div>
       </div>
