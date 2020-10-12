@@ -1,9 +1,9 @@
 <!-- BACKGROUND COLOR -->
  <section class="hero has-background-primary">
-  <div class="hero-body"> -->
+  <div class="hero-body"> 
 
     <!-- JOB CARD -->
-     <div class="columns is-multiline my-6 mx-6"> -->
+     <div class="columns is-multiline my-6 mx-6"> 
 
        <!-- LOOP FOR THE JOB CARDS  -->
       <div *ngFor="let post of posts" class="column is-one-third">
@@ -31,7 +31,7 @@
             
           </div>
           <footer class="card-footer level">
-            <input class="button is-medium is-info" type="submit" value="Complete">
+            <input class="button is-medium is-info" (click)="completePost(post._id) type="submit" value="Complete">
           </footer>
         </div>
       </div>

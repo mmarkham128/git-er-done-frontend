@@ -4,6 +4,7 @@ import { Post } from '../../models/posts';
 import { PostsService } from '../../services/posts.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+
 @Component({
  selector: 'app-view-current-jobs',
  templateUrl: './view-current-jobs.component.html',
