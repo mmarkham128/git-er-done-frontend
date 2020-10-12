@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,7 @@ import { ViewCompletedJobsComponent } from './admin/view-completed-jobs/view-com
 import { LogoutComponent } from './logout/logout.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
+import { AuthInterceptor } from './services/auth-interceptor'
 
 
 
@@ -48,9 +49,11 @@ import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
