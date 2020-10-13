@@ -7,5 +7,4 @@ export class User {
      admin: boolean;
     employeeID: string;
     id:string
-    //email: string;
 };
