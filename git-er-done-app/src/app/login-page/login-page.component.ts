@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Users } from '../models/users';
+import { NgForm } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router'
+
 
 @Component({
   selector: 'app-login-page',
@@ -8,18 +10,22 @@ import { Users } from '../models/users';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
+  isLoading = false;
 
-  user: Users = new Users();
+  constructor(public authService: AuthService, public router: Router ) { }
 
-  constructor(
-    public router: Router
-    ){ }
-
-  ngOnInit(): void {
+  onLogin(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+    this.authService.login(form.value.username,
+      form.value.password,
+      form.value.employeeFirstName,
+      form.value.employeeLastName,
+      form.value.employeeCellNumber,
+      form.value.employeeID);
+        this.router.navigate(['my-jobs'])
   }
 
-  getLogin() {
-    
-  }
-
+  ngOnInit(): void{ }
 }

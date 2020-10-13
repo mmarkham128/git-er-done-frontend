@@ -1,12 +1,49 @@
-<section class="hero has-background-primary is-fullheight">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-centered">
-          <div column is-5-tablet is-4-desktop is-3-widescreen>
-              <h3 class="title is-3 has-text-centered">VIEW EMPLOYEE WORKS!</h3>
+<!-- ADMIN HEADING -->
+<section class="hero has-background-info-dark">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title has-text-centered has-text-white is-size-1">
+        All Employees
+      </h1>
+      <br>
+      <!-- secondary nav bar for the admin - comes from the admin-nav component -->
+      <app-admin-nav></app-admin-nav>
+    </div>
+  </div>
+</section>
+<!-- BACKGROUND COLOR -->
+<section class="hero has-background-primary">
+  <div class="hero-body">
+    <!-- JOB CARD -->
+    <div class="columns is-multiline my-6 mx-6">
+      <!-- LOOP FOR THE JOB CARDS -->
+      <div *ngFor="let user of users" class="column is-one-third">
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title is-bold has-background-info has-text-white">
+              Git 'Er Done Employee
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <p>
+                <strong>Employee Name: </strong> {{user.employeeFirstName}} {{user.employeeLastName}}
+                <br>
+                <strong>Phone Number: </strong>{{user.employeeCellNumber}} <br>
+                <strong>Username: </strong>{{user.username}} <br>
+              </p>
+            </div>
+          </div>
+          <footer class="card-footer level">
+            <input class="button is-medium is-danger" (click) = "removeEmployee(user._id)" type="submit" value="Delete">
+          </footer>
         </div>
       </div>
     </div>
-    </div>
-  </section>
+  </div>
+</section>
+
+
+
+
 

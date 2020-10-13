@@ -1,12 +1,42 @@
-<section class="hero has-background-primary is-fullheight">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-centered">
-          <div column is-5-tablet is-4-desktop is-3-widescreen>
-              <h3 class="title is-3 has-text-centered">MY JOBS WORKS!</h3>
+<!-- BACKGROUND COLOR -->
+ <section class="hero has-background-primary">
+  <div class="hero-body"> 
+
+    <!-- JOB CARD -->
+     <div class="columns is-multiline my-6 mx-6"> 
+
+       <!-- LOOP FOR THE JOB CARDS  -->
+      <div *ngFor="let post of posts" class="column is-one-third">
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title is-bold has-background-info has-text-white">
+              Business Name:
+              <br>
+              {{post.businessName}}
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <p>
+                <strong>Contact Name: </strong> {{post.contactFirstName}} {{post.contactLastName}}
+                <br>
+                <strong>Phone Number: </strong>{{post.contactMainPhoneNumber}} <br>
+                <strong>Address: </strong>{{post.contactStreet}} <br>
+                {{post.contactCity}}, {{post.contactState}} {{post.contactZip}} <br>
+                <strong>Assigned To: </strong>{{post.employeeID}} <br>
+                <strong>Job Notes: </strong>
+              </p>
+              <textarea readonly class="textarea" placeholder="jobNotes">{{post.jobNotes}}</textarea>
+            </div>
+            
+          </div>
+          <footer class="card-footer level">
+            <input class="button is-medium is-info" (click)="completePost(post._id) type="submit" value="Complete">
+          </footer>
         </div>
       </div>
     </div>
-    </div>
-  </section>
+  </div>
+</section>
 
+  
