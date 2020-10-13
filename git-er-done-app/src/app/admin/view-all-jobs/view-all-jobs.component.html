@@ -45,15 +45,15 @@
                 </p>
                 <textarea readonly class="textarea" placeholder="jobNotes">{{post.jobNotes}}</textarea>
               </div>
-              
+
             </div>
             <footer class="card-footer level">
-              <input class="button is-medium is-danger" (click)="removePost(post.id)" type="submit" value="Remove">
+              <input class="button is-medium is-danger" (click)="removePost(post.id)" type="submit" value="Resolve">
               <input class="button is-medium is-success" [routerLink]="['/edit', post.id]" type="submit" value="Edit">
             </footer>
           </div>
         </div>
-        
+
       </div>
     </div>
   </div>

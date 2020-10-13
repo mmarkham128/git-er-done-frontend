@@ -49,10 +49,11 @@ removeUser(id: string): Observable<any> {
     {headers:{
       authorization: "token "+localStorage.getItem("token")
     }})
-
-
 }
 
+logout() {
+  localStorage.clear()
+}
 
 
 getUserUpdateListener(){
@@ -61,6 +62,6 @@ getUserUpdateListener(){
 
 
 
-}
 
+}
 

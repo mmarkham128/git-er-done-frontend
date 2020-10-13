@@ -17,14 +17,16 @@ export class LoginPageComponent implements OnInit {
   onLogin(form: NgForm) {
     if (form.invalid) {
       return;
-    }
+    }else {
     this.authService.login(form.value.username,
       form.value.password,
       form.value.employeeFirstName,
       form.value.employeeLastName,
       form.value.employeeCellNumber,
       form.value.employeeID);
-        this.router.navigate(['my-jobs'])
+    }setTimeout( () =>
+      this.router.navigate(['my-jobs']), 500
+    )
   }
 
   ngOnInit(): void{ }
