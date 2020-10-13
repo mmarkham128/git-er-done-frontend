@@ -1,11 +1,11 @@
 <!-- BACKGROUND COLOR -->
- <section class="hero has-background-primary">
-  <div class="hero-body"> 
+<section class="hero has-background-primary">
+  <div class="hero-body">
 
     <!-- JOB CARD -->
-     <div class="columns is-multiline my-6 mx-6"> 
+    <div class="columns is-multiline my-6 mx-6">
 
-       <!-- LOOP FOR THE JOB CARDS  -->
+      <!-- LOOP FOR THE JOB CARDS  -->
       <div *ngFor="let post of posts" class="column is-one-third">
         <div class="card">
           <header class="card-header">
@@ -28,15 +28,13 @@
               </p>
               <textarea readonly class="textarea" placeholder="jobNotes">{{post.jobNotes}}</textarea>
             </div>
-            
+
           </div>
           <footer class="card-footer level">
-            <input class="button is-medium is-info" (click)="completePost(post._id) type="submit" value="Complete">
+            <input class="button is-medium is-info" (click)="completePost(post.id)" type="submit" value="Complete">
           </footer>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-  

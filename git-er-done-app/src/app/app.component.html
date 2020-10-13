@@ -34,10 +34,11 @@
     <!-- Navbar Titles -->
     <div id="navbarBasicExample" class="navbar-menu" #navMenu>
       <div class="navbar-start">
-        <a button class="navbar-item" routerLink="home">Home</a>
-        <a button class="navbar-item" routerLink="signup">Signup</a>
-        <a button class="navbar-item" routerLink="login">Login</a>
-        <a button class="navbar-item" routerLink="home">Logout</a>
+        <a button class="navbar-item" routerLink="home" *ngIf="!userIsAuthenticated">Home</a>
+        <a button class="navbar-item" routerLink="signup" *ngIf="!userIsAuthenticated">Signup</a>
+        <a button class="navbar-item" routerLink="login" *ngIf="!userIsAuthenticated">Login</a>
+        <a button class="navbar-item" (click)="ngOnDestroy()" *ngIf="userIsAuthenticated" >Logout</a>
+        <a button class="navbar-item" routerLink="admin-home" *ngIf="userIsAuthenticated">Admin</a>
       </div>
     </div>
 
